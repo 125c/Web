@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        var a = 123, b = 1.23, c = "aaaa", d = true//純量值
+        var item = {sn:123,name:"顆顆",tel:"07652432"}//[object Object] datatype是物件
+        var item = [123, "aaaa", "07652432"];//中跨號叫arry
+
+        var item = ["123", "王小明", "078210171"];
+
+        document.write(item);//輸出陣列就有包括逗點
+        document.write("<hr>");
+        document.write(item[0]);//依照索引值列出
+        document.write(item[1]);
+        document.write(item[2]);
+        document.write("<hr>");
+        for (var i = 0; i < 3; i++) {
+            document.write(item[i]);
+        }
+        document.write("<hr>");
+
+        var Rainbow = ["紅", "橙", "黃", "綠", "藍", "靛", "紫"];
+
+        for (var i = 0; i < 7; i++) {
+            document.write(Rainbow[i]);
+        }
+        document.write("<hr>");
+
+        var RainbowColor = ["Red", "Orange", "Yellow", "Green", "Blue", "Indigo", "Violet"];
+
+        for (var i = 0; i < RainbowColor.length; i++) { //如果i=1，後面要+1，如果是0，後面就是原本的長度，所以建議從0開始然後<長度
+            document.write(RainbowColor[i]);
+        }
+
+        document.write("<hr>");
+
+        //用本身的顏色來顯示字
+        for (var i = 0; i < RainbowColor.length; i++) {
+            //document.write("<span style='color:" + RainbowColor[i] + "'>" + Rainbow[i] + "</span>");
+            document.write(`<span style="color:${RainbowColor[i]}">${Rainbow[i]}</span>`);
+        }
+        document.write("<hr>");
+        document.write(`${item }`);
+        
+
+
+
+    </script>
+</body>
+</html>

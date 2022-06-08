@@ -1,0 +1,60 @@
+﻿@model _02View.Models.Member
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+<form method="post" action="/HTMLHelper/Create">
+    <p>
+        
+        帳號：<input id="UserId" name="UserId" type="text" />
+    </p>
+    <p>
+        密碼：<input id="Pwd" name="Pwd" type="text" />
+    </p>
+    <p>
+        姓名：<input id="Name" name="Name" type="text" />
+    </p>
+    <p>
+        信箱：<input id="Email" name="Email" type="text" />
+    </p>
+    <p>
+        生日：<input id="Birthday" name="Birthday" type="text" />
+    </p>
+    <input id="Submit1" type="submit" value="註冊會員" class="btn btn-default" />
+</form>
+<hr />
+@using (Html.BeginForm())
+{
+    <p>
+        @Html.LabelFor(model => model.UserId)
+        @Html.TextBoxFor(model => model.UserId) 
+    </p>
+    <p>
+        @Html.LabelFor(model => model.Pwd)
+        @Html.TextBoxFor(model => model.Pwd)
+    </p>
+    <p>
+        @Html.LabelFor(model => model.Name)
+        @Html.TextBoxFor(model => model.Name)
+    </p>
+    <p>
+        @Html.LabelFor(model => model.Email)
+        @Html.TextBoxFor(model => model.Email)
+
+    </p>
+    <p>
+        @Html.LabelFor(model => model.Birthday)
+        @Html.TextBoxFor(model => model.Birthday)
+    </p>
+    <input id="Submit1" type="submit" value="註冊會員" class="btn btn-default" />
+}
+
+
+
+<hr />
+<h3>
+    @Html.Raw(ViewBag.Result)
+</h3>
+

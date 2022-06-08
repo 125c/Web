@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <input />
+    <input type="text" />
+    <!--以上兩個單行文字方塊(不能按enter)-->
+    <input type="button" value="按下去" />
+    <input type="checkbox" />
+    <span>我願意</span><!--checkbox的項目 不是用value 要另外打-->
+    <input type="radio" name="ok" /><!--設定一樣的name才會在同一組-->
+    <span>我同意</span>
+    <input type="radio" name="ok" />
+    <span>我不同意</span>
+    <select>
+        <option>111</option>
+        <option>222</option>
+        <option>3</option>
+        <option>444</option><!--滿意度不會用下拉式表單 有資訊揭露度的問題 看著a選到b-->
+    </select>
+    <hr />
+    <select multiple>
+        <option>a111</option>
+        <option>aa222</option>
+        <option>aaa3</option>
+        <option>aaaaa444</option>
+    </select>
+    <hr />
+    <textarea rows="10" class="30"><!--多行的文字方塊 可以按enter-->
+
+    </textarea>
+    <hr />
+    <input type="color" />
+    <input type="datetime-local" />
+    <input type="range" />
+    <input type="number" />
+    <input type="password" />
+    <hr />
+    <input type="button" value="button" onclick="alert('test')" /> <!--觸發前端程式-->
+    <input type="reset" value="reset" /><!--不是清掉 是回到原本預設值-->
+    <input type="submit" value="submit" /><!--會產生下一頁 postback 唯一可以跟server溝通的按鈕-->
+    <!--通訊協定走http 是requestest 跟 response 一整組叫postback--> 
+    <form><!--一定要放在form標籤裡才會交給後端-->
+        <fieldset style="width:300px;margin:auto">
+            <legend>登入系統</legend>
+            <table>
+                <tr>
+                    <td>帳號:</td>
+                    <td><input id="Tex1" type="text" /></td>
+                </tr>
+                <tr>
+                    <td>密碼:</td>
+                    <td><input id="Password1" type="password" /></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input id="submit1" type="submit" value="登入Login" />
+                        <input id="reset1" type="reset" value="重設Reset" />
+                    </td>
+                </tr>
+            </table>
+
+        </fieldset>
+
+
+    </form>
+</body>
+</html>

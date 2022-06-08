@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        h1 {
+            color: aqua;
+            background-color: lightpink;
+        }
+
+        h2 {
+            border: 1px solid red;
+        }
+        td {
+            color: darkgoldenrod;
+            align-items: center;
+        } 
+        .Jack {
+            text-decoration: underline;
+        }
+
+        .Rose {
+            font-size: 3em;
+        }
+
+        .mary {
+            background-color: green;
+        }
+        .score{
+            border:1px dotted gray;
+        }
+        #h1{
+            font-size:1em;
+            color:rebeccapurple;
+        }
+        #table1 > tr > td {
+            border: 1px solid #3c3c3c;
+            text-align: center;
+        }
+
+        #table1>tr:first-child+tr>td:last-child {
+            color: red;
+        }
+        #myul ol>li:first-child+li+li{
+            color:powderblue;
+        }
+        #table1 tr:hover {
+            background-color: yellow;
+        }
+
+
+    </style>
+    <!--寫在這裡的是css。選擇器:tag、calss、id。h1的都要紅色。一個屬性用;結束。em的基準是16px-->
+    <!--border的格式一定是：粗細 樣式 顏色-->
+    <!--combine 一次套用多個class。當tag選擇器與class的選擇器條件相衝突時以calss為準-->
+    <!--只要calss同樣名稱，算同一類。打.是類別選擇器例如.Jack-->
+    <!--id選擇器開頭是#，遇到tag選擇器，以id為主-->
+    <!--範圍大小：Tag大於calss大於id。優先：id先class先tag最後。inLine最大，不管選擇器-->  
+    <!-- > 上一層 ~ 下一個 +下n個-->
+</head>
+<body>
+    <h2 class="mary">capoo與咪卡</h2>
+    <h1 class="Jack">text-decoration: underline;隨便喇!capoo</h1>
+    <h1 class="Rose">.Rose font-size:3em; </h1>
+    <h1 class="Jack mary">隨便喇!capoo</h1>
+    <!--combine 一次套用多個class。-->
+    <h2>capoo與咪卡</h2>
+    <h1 class="mary">隨便喇!capoo</h1>
+    <!--當tag選擇器與class的選擇器條件相衝突時以calss為準-->
+    <h1 id="h1">color:rebeccapurple隨便喇!capoo</h1>
+    <!--同一個網頁上不能有2個以上相同的id名稱，可以自己取。-->
+    <h1 class="Rose mary">隨便喇!capoo</h1>
+    <!--都是calss選擇器時，屬性又一樣，看head的順序-->
+    <h1>隨便喇!capoo</h1>
+    <h1>隨便喇!capoo</h1>
+    <h1>隨便喇!capoo</h1>
+    <h2>capoo與咪卡</h2>
+    <h2>capoo與咪卡</h2>
+    <h2>capoo與咪卡</h2>
+    <h2>capoo與咪卡</h2>
+    <hr />
+    <table style="width: 600px; border: solid; box-shadow: 3px 3px 10px black;align-items:center">
+        <caption>成績單</caption><!--caption有框，但HTML不認為有-->
+        <thead>
+            <tr>
+                <th class="Jack">姓名</th>
+                <th>國文</th>
+                <th>數學</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="Jack">張三</td>
+                <td class="score">89</td>
+                <td>94</td>
+            </tr>
+            <tr>
+                <td class="Jack">李四</td>
+                <td>90</td>
+                <td>76</td>
+            </tr>
+
+            <tr>
+                <td class="Jack">王五</td>
+                <td>88</td>
+                <td id="h1">62</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">
+                    製表人:大雄
+                </td>
+        </tfoot>
+
+    </table>
+    <!--只要calss同樣名稱，算同一類。打.是類別選擇器例如.Jack-->
+    <hr />
+    <table id="table1">
+    </table>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        var item = "";
+
+        $.ajax({
+            type: 'get',
+            url: 'https://data.coa.gov.tw/Service/OpenData/ODwsv/ODwsvAttractions.aspx',
+            success: function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    item = `<tr>
+                                                        <td>${data[i].Name}</td>
+                                                        <td>${data[i].Tel}</td>
+                                                        <td>${data[i].Address}</td>
+                                                    </tr>`;
+                    $('#table1').append(item);
+                }
+            }
+
+        });
+
+    </script>
+    <hr />
+    <ul id="myul">
+        <li>
+            111
+            <ul>
+                <li>aaa</li>
+                <li>bbb</li>
+                <li>ccc</li>
+                <li>
+                    ddd
+                    <ol>
+                        <li>111</li>
+                        <li>222</li>
+                        <li>333</li>
+                        <li>444</li>
+                        <li>aaaaa</li>
+                    </ol>
+                </li>
+                <li>eee</li>
+                <li>fff</li>
+                <li>ggg</li>
+                <li>hhh</li>
+            </ul>
+        </li>
+        <li>222</li>
+        <li>333</li>
+        <li>444</li>
+        <li>555</li>
+    </ul>
+
+</body>
+<!--空白：子孫；>：下一層子node +下一個兄弟node ~下n個兄弟node :延伸性選擇-->
+</html>

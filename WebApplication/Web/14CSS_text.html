@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h1 style="text-decoration:underline">h1 style="text-decoration:underline</h1>
+    <h1 style="text-decoration:overline">h1 style="text-decoration:overline"</h1>
+    <h1 style="text-decoration:line-through">h1 style="text-decoration:line-through"</h1>
+    <h1 style="text-decoration:none">h1 style="text-decoration:none"</h1>
+    <a href="#" style="text-decoration:none">go to google </a><!--原本超連結有底線，dec讓他沒有底線-->
+    <h1 style="color:aquamarine;background-color:#808080;font-size:24pt">style="color:aquamarine;background-color:#808080;font-size:24pt"</h1>
+    <h1 style="text-align:center">h1 style="text-align:center"</h1>
+    <h1 style="text-align:right">h1 style="text-align:right"</h1>
+    <div style="text-align: center; border:dashed;width:1000pt;border-color:blueviolet">
+        <!--隨便試-->
+        <h1 style="text-align:right;border:dotted">h1 style="text-align:right"</h1>
+    </div>
+    <hr />
+    <h1 style="text-transform:uppercase">h1 style="text-transform:uppercase"</h1><!--全部小寫-->
+    <h1 style="text-transform:lowercase">h1 style="text-transform:lowercase"</h1><!--全部大寫-->
+    <h1 style="text-transform:capitalize">style="text-transform:capitalize 這裡是小寫</h1><!--字首大寫-->
+    <h1 style="text-transform:capitalize">H1 STYLE="TEXT-TRANSFORM:UPPERCASE" 前面是大寫text-transform:lowercase前面是小寫</h1>
+    <h1 style="text-shadow:5px 5px 10px black">h1 style="text-shadow:5px 5px 10px black"</h1><!--影子x軸位移 y軸位移 柔化程度 顏色(可用色碼表示)。暈不同程度看起來不同顏色。影子不移動看起來像光暈-->
+    <h1 style="text-shadow:5px 5px 3px black">h1 style="text-shadow:5px 5px 3px black"</h1>
+
+    <h1 style="text-shadow:0px 0px 13px black">h1 style="text-shadow:0px 0px 13px black"</h1>
+    <h1 style="text-shadow: 0px 0px 5px white,0px 0px 8px yellow,0px 0px 13px red; background-color: #333333; text-align: center">h1 style="text-shadow: 0px 0px 5px white,0px 0px 8px yellow,0px 0px 13px red; background-color: #333333; text-align: center"</h1><!--第二組陰影會在第一組下面-->
+    <hr />
+    <input id="btn1" type="button" value="放大" /><!--一般button要配onClick，但是這邊是另外用script。當事件發生的時候=我要執行那段程式-->
+    <input id="btn2" type="button" value="還原" />
+    <input id="btn3" type="button" value="縮小" />
+    <div id="news" style="text-indent:2em">
+        <!--2em代表段落開始空2格。要用相對表示法。div裡面不會像pre那樣直接顯示格式-->
+        『重現純真童年的卡通回憶！』～實現夢想的哆啦A夢～《大雄的宇宙英雄記》片頭曲⎟ 小提琴 Violin Cover by BOY
+        觀看次數：8,765次  2020年8月19日  這次是Cos哆啦A夢裡的大雄...咦...不用Cos就很像了...?
+        還記得以前國小的時候，每天放學補習回家後第一件事情就是打開華視或者GTV八大綜合台準時收看哆啦A夢，現在回想起來，哆啦A夢真的是很徹底的佔據我童年的一大部分呢ＸＤ
+        聽說哆啦A夢要出新的劇場版，也是我小時候看到哭的大雄與恐龍重製版！趕緊做個Cover來應景一下！希望大家會喜歡！！
+
+        （R.D小編表示：我們的童年果然...非常相似！可惜最近居然＿。
+        -
+        🔧Equipment
+        ●Headphone / ATH-M40
+        ●Microphone / DPA4099v
+        ●Camera / Panasonic Lumix DC-G95
+
+        Violin / Recording / Cinematography / Mixing / Editing / Drawing : BOY
+        Social Media Editor / Manager / Photographer : R.D
+        Caption : Haruki
+
+        📌BoyViolin's Information :
+        🎬 Subscribe my YouTube（訂閱我）:
+        https://www.youtube.com/channel/UCGV6...
+        🎻 Follow my Instagram（追蹤我的IG）:
+        https://www.instagram.com/boy_violin/
+        🔵 Follow my Facebook（追蹤我的臉書）:
+        https://www.facebook.com/BoyViolin-63...
+        ✉️ For any performances invitation, please do inbox my Instagram or email me at : boyviolin4341@gmail.com
+
+        喜歡我的影片，也歡迎大家幫我按下訂閱鍵，如果您有多的餘力，您可以贊助我讓我有更多力氣去做更好的音樂和影片給大家～！謝謝大家！！
+        If you like my video, please subscribe to my channel, and if you have spare time / more resources, please sponsor me so that I have more resources to make better music!
+        🥁DONATION
+        歐付寶 (Opay pays): ►https://payment.opay.tw/Broadcaster/D...
+
+        #夢をかなえてドラえもん #ドラえもん #ドラえもん #violincover #music #Music #小提琴 #小提琴音樂 #BoyViolin #卡通主題曲 #主題曲 #小叮噹 #哆啦A夢
+        #實現夢想的哆啦A夢 #片頭曲
+    </div>
+    <script>
+        btn1 = document.getElementById("btn1");//document.這一份文件getElementById裡找指定的物件用id
+        btn2 = document.getElementById("btn2");
+        btn3 = document.getElementById("btn3");
+        news = document.getElementById("news");
+
+        btn1.addEventListener('click', function () {//事件監聽器
+            news.style.fontSize = "40pt";//news.把這個物件style.fontSize改變size
+        })
+        btn2.addEventListener('click', function () {
+            news.style.fontSize = "12pt";
+        })
+        btn3.addEventListener('click', function () {
+            news.style.fontSize = "8pt";
+        })
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        a:link {
+            text-decoration: none;
+        }
+
+        a:active {
+            background-color: yellow;
+            font-size: 5em;
+        }
+
+        a:visited {
+            color: blue;
+        }
+
+        a:hover {
+            color: cornflowerblue;
+            cursor: cell;
+        }
+    </style>
+    <!--a:Link a在Link的狀態。如果是無效的超連結，不會有visited狀態，會跟link狀態衝突-->
+    <!--預設是cursor pointer-->
+</head>
+<body>
+    <a href="https://www.youtube.com/">
+    YT 一個物件呈現3種狀態:link點前、active點下去、visited點後，滑鼠有hover狀態(cursor)。拜訪過就看不到link狀態
+    </a>
+    <!--inLine寫法會3種狀態都覆蓋掉-->
+</body>
+</html>

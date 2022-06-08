@@ -1,0 +1,143 @@
+﻿@font-face {
+    font-family: 'webdings';
+    src: url('fonts/webdings.eot') format('embedded-opentype');
+}
+@font-face {
+    font-family: 'webdings';
+    src: url('fonts/webdings.svg') format('svg');
+}
+@font-face {
+    font-family: 'webdings';
+    src: url('fonts/webdings.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'webdings';
+    src: url('fonts/webdings.woff') format('woff');
+}
+@font-face {
+    font-family: 'webdings';
+    src: url('fonts/webdings.woff2') format('woff2');
+}
+#controlPanel
+
+{
+    border: 3px solid;
+    border-color:aqua;
+    width: 900px;
+    height: 100px;
+    margin: auto;
+    text-align: center;
+    cursor: pointer;
+}
+
+#controlPanel > span {
+    border: 2px solid;
+    padding: 3px;
+    box-shadow: 2px 2px 5px gray;
+    cursor: pointer;
+    font-family: Webdings;
+    font-size: 3rem;
+    border-radius: 50%;
+}
+
+    #controlPanel > span:hover {
+        background-color: gold;
+    }
+
+#song, #info {
+    width: inherit;
+    font-size: 2rem;
+    background-color: black;
+    color: azure;
+    text-align: center;
+}
+/*#info{
+            font-size:1.5rem;
+        }*/
+.btnVol {
+    border-radius: 50%;
+    border: 1px groove white;
+    box-shadow: 2px 2px 5px gray;
+}
+
+#volValue {
+    width: 80%;
+    height: 8px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 3px solid #808080;
+    background-color: #009d72;
+    outline: none;
+}
+
+    #volValue::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 35px;
+        height: 25px;
+        background-color: #4a4848;
+        border: 3px groove white;
+    }
+
+    #volValue::-moz-range-thumb {
+        -moz-appearance: none;
+        width: 35px;
+        height: 25px;
+        background-color: #4a4848;
+        border: 3px groove white;
+    }
+
+#volinfo {
+    width: 22px;
+    text-align: center;
+    background-color: black;
+    color: yellow;
+    box-shadow: 2px 2px 5px gray;
+    border-radius: 50%;
+}
+
+#progress {
+    width: inherit;
+}
+
+#progress {
+    width: inherit;
+    height: 5px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    margin-bottom: 10px;
+    background-color: #c8c8c8;
+    outline: none;
+}
+
+    #progress::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 10px;
+        height: 5px;
+        background-color: #b60000;
+        cursor: pointer;
+        transition: .5s;
+    }
+
+        #progress::-webkit-slider-thumb:hover {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+
+#book > div {
+    border: 1px groove;
+    width: 340px;
+    height: 900px;
+    float: left;
+}
+
+    #book > div > div {
+        border: 1px groove;
+        background-color: gainsboro;
+        text-align: left;
+    }
+
+.hide {
+    display: none;
+}
+

@@ -1,0 +1,24 @@
+﻿@model IEnumerable<_02View.Models.NightMarket>
+
+@{
+    ViewBag.Title = "台南高雄各大夜市列表";
+}
+@*//03-7-7 編輯Index View*@
+<h2>台南高雄各大夜市列表</h2>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-6 col-lg-3">
+            <div class="thumbnail">
+                <img src="~/02View素材/images/@(item.Id).jpg" class="img-thumbnail" />
+                <div class="caption">
+                    <h2 class="text-primary">@item.Name</h2>
+                    <p>@item.Address</p>
+                    <p> <a href="https://www.google.com.tw/maps/search/@item.Address" target="_blank" class="btn btn-danger btn-block">我要看地圖</a></p>
+                </div>
+            </div>
+
+        </div>
+    }
+</div>

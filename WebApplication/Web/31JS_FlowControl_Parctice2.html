@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        var a = "";
+        //用星星畫三角形
+        for (i = 1; i <= 5; i++) {
+            a += "*";//變數不要重複，不然會被蓋過去
+            document.write(a+"<br>");
+            console.log()
+        }
+        //document.write("<hr>");//自己做然後失敗Orz
+        ////巢狀迴圈
+        //for (j = 0; j<5;j++) {
+        //    for (var i = 0; i <= j; i++) {
+        //        document.write("*");
+        //    }
+        //    document.write("<br>");
+        //}
+        //document.write("<hr>");
+        ////只用一個迴圈做
+        //var a = "";
+        //for (var i = 1; i <= 5; i++) {
+        //    a += "*";// a = a +*;
+        //    document.write(a+"<br>");
+        //}
+        //document.write("<hr>");
+        //document.write("<hr>");
+        for (var x = 1; x < 10; x++) {
+            document.write("<br>");
+            for (var y = 1; y < 10; y++) {
+                document.write(x + "*" + y + "=" + (x * y) + "<br>" )
+
+            }
+        }
+
+
+    </script>
+
+</body>
+</html>

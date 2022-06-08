@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>切板</title>
+    <style>
+/*        div {
+            border-top: 1px solid;
+            border-right: 5px solid red;
+        }*/
+
+        #container {
+            width: 1200px;
+            margin: auto;
+        }
+
+        #top {
+            height: 150px;
+            background-color: burlywood;
+        }
+
+        #left {
+            height: 700px;
+            width: 300px;
+            float: left;
+            background-color: chocolate;
+        }
+
+        #right {
+            height: 700px;
+            width: 900px;
+            float: right;
+            background-color: aqua;
+        }
+
+        #bottom {
+            height: 100px;
+            clear: both;
+            background-color: cornflowerblue;
+        }
+    </style>
+    <!--border裡面物件的距離叫padding。物件之間的距離margin-->
+    <!--border-top:1px solid;最上面看起來比較粗，因為是2條線，包括border-->
+    <!--div.border-right超過的話會把下一個框框擠下去-->
+</head>
+<body>
+    <div id="container"><!--這個div的container是body-->
+        <div id="top">上</div>
+        <div id="left">左</div>
+        <div id="right">又</div>
+        <div id="bottom">下</div>
+    </div>
+</body>
+</html>

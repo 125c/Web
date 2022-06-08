@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <hr />
+    <script>
+        name = 123;
+        name = 456;
+        name = 789;
+        document.write(name);//顯示789
+        var a;
+        document.write(a);//顯示undefined
+        //b;
+        //document.write(b);//沒東西
+        //3種宣告變數的方式 不寫、var、let。如果一開始不知道要放什麼，前面就一定要寫。如果var c，但是沒有指定c是什麼，就會顯示「undefine」（有宣告且輸出）如果沒有宣告變數直接顯示，會沒有東西。按f12切到console看錯誤。
+        //not define!=undefine
+        var a = 555;
+        var a = "aaaaa";//宣告後還可以再宣告
+        document.write(a);
+        //只有3個物件型態srt、num（含小數）、bloom。num如果太長，會用科學記號表示法（精準度遺失）
+        var n1 = 1.5;
+        var n2 = 1.2;
+        document.write(n1 + n2);
+        //跟
+        var n1 = 1.5;
+        var n2 = 1.2;
+        var sum = n1 + n2;
+        document.write(sum);
+        //結果相同
+        document.write("<hr />");
+        n = 123;//十進位整數
+        document.write(n);
+        document.write("<hr />");
+        n = 0123;//八進位整數 0在最前面是符號，輸出一律用十進位。八進位的123
+        document.write(n);
+        document.write("<hr />");
+        n = 0x123;//十六進位整數
+        document.write(n);
+        document.write("<hr />");
+        n = 0182;//八進位整數，雖然用八進位表示法，前面寫0，但是八進位不應該有8
+        document.write(n);
+        document.write("<hr />");
+        n = 5e-3;//浮點數
+        document.write(n);
+        document.write("<hr />");
+
+
+        var t = 0.1;
+        var x = 0.2;
+        document.write(t + x);//精準度遺失。數字相加的時候是先轉成二進位，相加，轉回十進位。5+2=7 101+10=111所以是7。但0.1+0.2是0.1*2（幾進位*幾）=0.2，還沒得到整數就只好一直乘下去，但是箱子大小有限，所以就把後面切掉。（補數運算）
+        
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+         //1.信用卡付款2.現金3.轉帳4.賴配5.貨到付款
+        var intPayType = 2;
+        switch (intPayType) {//()裡面要是值
+            case 1:
+                document.write("信用卡付款");
+                break;
+            case 2:
+                document.write("現金");
+                break;
+            case 3:
+                document.write("轉帳");
+                break;
+            case 4:
+                document.write("賴配");
+                break;
+            case 5:
+                document.write("貨到付款");
+                break;
+
+        }
+        document.write("<hr>");
+        var strColor = "y";
+        switch (strColor) {
+            case "y":
+                document.write("黃色");
+                break;
+            case "g":
+                document.write("黃色");
+                break;
+            case "r":
+                document.write("黃色");
+                break;
+            default:
+                document.write("不知道");
+        }
+        document.write("<hr>");
+        //區分等第
+        //90分以上為優等, 80~89分為甲等, 70~79分為乙等
+        //60~69分為丙等, 60分以下為丁等
+        var score = 75;
+        var gr = parseInt(score / 10);  //相當於score=parseInt(score / 10)
+        //score/=10;
+        switch (gr) {
+            case 10:
+            case 9:
+                document.write("優");
+                break;
+            case 8:
+                document.write("甲");
+                break;
+            case 7:
+                document.write("乙");
+                break;
+            case 6:
+                document.write("丙");
+                break;
+            default:
+                document.write("不知道");
+        }
+
+
+
+    </script>
+
+</body>
+</html>

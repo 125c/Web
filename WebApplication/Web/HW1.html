@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>28鄭巧玉的前端作業</title>
+    <style>
+        td {
+            font-family: 微軟正黑體;
+            color: azure;
+            margin: auto;
+        }
+    </style>
+</head>
+<body style="background-color: #808080">
+    <form>
+        <!--一定要放在form標籤裡才會交給後端-->
+        <fieldset style="width:300px;margin:auto">
+            <legend>登入系統</legend>
+            <table>
+                <tr>
+                    <td>帳號:</td>
+                    <td><input id="Tex1" type="text" /></td>
+                </tr>
+                <tr>
+                    <td>密碼:</td>
+                    <td><input id="Password1" type="password" /></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input id="submit1" type="submit" value="登入Login" />
+                        <input id="reset1" type="reset" value="重設Reset" />
+                    </td>
+                </tr>
+            </table>
+
+        </fieldset>
+    </form>
+    <p>喜歡的遊戲類型</p>
+    <input type="checkbox" /><span>FPS(第一人稱射擊)</span>
+    <input type="checkbox" /><span>MMORPG(多人線上腳色扮演)</span>
+    <input type="checkbox" /><span>DOTA</span>
+    <input type="checkbox" /><span>ABA(非對稱競技遊戲)</span>
+    <input type="checkbox" /><span>LCG(成長式卡牌遊戲)</span><br />
+    <input type="radio" name="ok" /><span>我同意加入會員</span>
+    <input type="radio" name="ok" /><span>我願意加入會員</span>
+    <input type="radio" name="ok" /><span>我超想加入會員</span>
+    <br />
+    <p>居住縣市</p>
+    <select>
+        <option>台北市</option>
+        <option>新北市</option>
+        <option>桃園市</option>
+        <option>新竹市</option>
+        <option>喵力市</option>
+        <option>南投市</option>
+    </select><br>
+    <p style="color: white; font-family: 微軟正黑體; font-size: 26pt "></p>留言板<br />
+    <textarea rows="10" class="30">
+    </textarea>
+    <button onclick="alert1()">送出</button>
+    <script>
+        function alert1() {
+            alert("我還不會QQ");
+        }
+    </script>
+    <table style="align-items:center;background-color:#808080;color:azure;margin:auto">
+        <caption style="font-size: 48pt;font-family:'Bradley Hand ITC'">About me<br /></caption>
+        <caption style="font-family: 微軟正黑體; font-size: 12pt; text-align: center ;color:darkblue">的第一次前端作業</caption>
+        <tr>
+            <td style="align-content: center; font-size: 26pt; text-align: center; font-family: 'Bradley Hand ITC'">
+                Name:
+            </td>
+            <td style="align-content: center; font-size: xx-large; font-size: 26pt; text-decoration-line: underline; font-family: 'Bradley Hand ITC'">
+                Chaio - yu,Cheng
+            </td>
+        </tr>
+        <tr>
+            <td style="font-family: 微軟正黑體; font-size:26pt">
+                作品集
+            </td>
+            <td>
+                <ul>
+                    <li><a href="https://punchboardgame.pixnet.net/blog/post/560975901-%E6%AD%B7%E5%8F%B2%E9%95%B7%E6%B5%81-2021-%E6%96%B0%E7%89%88-the-flow-of-history-%E7%B9%81%E9%AB%94%E4%B8%AD%E6%96%87%E7%89%88">歷史長流</a></li>
+                    <li><a href="https://punchboardgame.pixnet.net/blog/post/455932631">龐式騙局</a></li>
+                    <li><a href="http://bgnachimu.blogspot.com/2021/05/blog-post_17.html">蒼天之死</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td style=" font-size:26pt">
+                人生關鍵字
+            </td>
+            <td>
+                <table style="border: 5px dotted #000000; width: 800px; box-shadow: 3px 3px 10px black; text-align: center">
+                    <tr>
+                        <td style="background-color:#b6ff00;color:#4800ff;font-family: 微軟正黑體;"rowspan="2">桌遊編輯</td>
+                        <td style="font-family: 微軟正黑體">RPG</td>
+                        <td style="font-family: 微軟正黑體">統計學</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="background-color:antiquewhite;color:rgb(0,0,0)">網際網路</td>
+                    </tr>
+                    <tr>
+                        <td>數據分析</td>
+                        <td>陳柏邑</td>
+                        <td>絕版品</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td style="box-shadow: 5px 5px 10px black; font-size: 26pt; font-family: 微軟正黑體">
+                我家
+            </td>
+            <td>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.017632299977!2d120.29013721529405!3d22.61581673708164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e038d776863d9%3A0x127263b26b1a62c6!2z5b6M5Y-wIEJhY2tzdGFnZSBMaXZl!5e0!3m2!1szh-TW!2stw!4v1649732532228!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" border-color="coral"></iframe>
+            </td>
+        </tr>
+        <tr>
+            <td style="font-family: 微軟正黑體; font-size:26pt">
+                我的最愛
+            </td>
+            <td>
+                <img src="images/FB_IMG_1646242150600.jpg" style="opacity:0.3" />
+                <img src="images/FB_IMG_1638068248161.jpg" />
+                <img src="https://img.ltn.com.tw/Upload/art/page/800/2015/02/09/161.jpg" />
+            </td>
+        </tr>
+        <tr>
+            <td style="font-family: 微軟正黑體; font-size:26pt">
+                喜歡的影片
+            </td>
+            <td>
+                <iframe width="1020" height="630" src="https://www.youtube.com/embed/QQ7kNRKNniw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              
+            </td>
+        </tr>
+        <!--老師對不起，做不完ㄒ^ㄒ-->
+    </table>
+</body>
+</html>

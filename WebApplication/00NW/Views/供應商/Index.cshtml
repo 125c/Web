@@ -1,0 +1,93 @@
+﻿@model IEnumerable<_00NW.Models.供應商>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>供應商</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.供應商1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.連絡人)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.連絡人職稱)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.地址)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.城市)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.行政區)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.郵遞區號)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.國家地區)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.電話)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.傳真電話)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.首頁)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.供應商1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.連絡人)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.連絡人職稱)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.地址)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.城市)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.行政區)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.郵遞區號)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.國家地區)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.電話)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.傳真電話)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.首頁)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.供應商編號 }) |
+            @Html.ActionLink("Details", "Details", new { id=item.供應商編號 }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.供應商編號 })
+        </td>
+    </tr>
+}
+
+</table>

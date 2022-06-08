@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        //流程控制 if else
+        var a = 6;
+        //滿足條件就執行，不滿足就不執行if
+        
+        if (a > 10) {//運算結果一定要是布林
+            document.write("a>10");
+
+        }
+        else document.write("a<10"); //else可以不用。有else的是二擇一
+        document.write("<hr>");
+        //1.信用卡付款2.現金3.轉帳4.賴配5.貨到付款
+        var intNumber = prompt("要用什麼付款？");
+        if (intNumber == 1) {
+            document.write("信用卡付款")
+        }//這裡沒有寫所以跳出（就不顯示）
+        if (intNumber == 2) {
+            document.write("cash")
+        } else if (intNumber == 3) {
+            document.write("轉帳")
+        } else if(intNumber == 4) {
+            document.write("Line Pay")
+        } else if (intNumber == 5) {
+            document.write("貨到付款")
+        } else document.write("沒有這種東西")
+        //判斷資料型別
+
+        var t = 1, r = "1";
+
+        if (t == r) {//用==字串加數字會成立，===字串加數字不會成立
+            document.write("成立");
+        }
+        else
+            document.write("不成立");
+
+
+        document.write("<hr>");
+
+        //值指定給變數後，一定是true，所以發現怎麼執行都成立的時候要檢查=數量
+        var t = 1, r = 2;
+
+        if (t = r) {
+            document.write("成立");
+        }
+        else
+            document.write("不成立");
+
+
+        document.write("<hr>");
+        //區分等第
+        //90分以上為優等, 80~89分為甲等, 70~79分為乙等
+        //60~69分為丙等, 60分以下為丁等
+
+        //!not &&and ||or ←也是執行順序
+        var s = prompt("請輸入成績");
+        if (s >= 60) {
+            document.write("丙")
+        } else if (s >= 70) { //&&
+            document.write("乙")
+        } else if (s >= 80) {
+            document.write("甲")
+        } else if (s >= 90){
+            document.write("優")
+        }
+        else document.write("失敗")
+        document.write("<hr>");
+        var s = prompt("你的成績？");
+        if (s >= 90)
+            document.write("優等");
+        if (s >= 80 && score <= 89)
+            document.write("甲等");
+        if (s >= 70 && score <= 79)
+            document.write("乙等");
+        if (s >= 60 && score <= 69)
+            document.write("丙等");
+        if (s < 60)
+            document.write("丁等");
+
+        document.write("<hr>");
+        //搜尋式if
+        if (s >= 90)
+            document.write("優優等");
+        else if (s >= 80)
+            document.write("甲甲等");
+        else if (s >= 70)
+            document.write("乙乙等");
+        else if (s >= 60)
+            document.write("丙丙等");
+        else
+            document.write("丁丁等");
+        document.write("<hr>");
+        
+            
+        
+       
+        
+
+
+
+    </script>
+</body>
+</html>

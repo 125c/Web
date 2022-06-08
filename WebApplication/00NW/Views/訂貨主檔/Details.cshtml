@@ -1,0 +1,122 @@
+﻿@model _00NW.Models.訂貨主檔
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>訂貨主檔</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.訂單日期)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.訂單日期)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.要貨日期)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.要貨日期)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.送貨日期)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.送貨日期)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.運費)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.運費)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.收貨人)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.收貨人)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.送貨地址)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.送貨地址)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.送貨城市)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.送貨城市)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.送貨行政區)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.送貨行政區)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.送貨郵遞區號)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.送貨郵遞區號)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.送貨國家地區)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.送貨國家地區)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.客戶.公司名稱)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.客戶.公司名稱)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.員工.姓名)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.員工.姓名)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.貨運公司.貨運公司名稱)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.貨運公司.貨運公司名稱)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.訂單號碼 }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html><!--宣告文件-->
+<!--一個tag</>沒有範圍 ; 一對tag <> </> 有範圍的-->
+<html>
+<head><!--設定 通常看不到-->
+    <meta charset="utf-8" />
+    <title>史萊姆的第一個家</title>
+    <style>
+        h1:hover{
+            background-color:yellow;
+        }
+        .myStytle:hover{
+            background-color:pink;
+        }
+        .myStytle{
+            color:green  ;
+        }
+  
+    </style>
+</head>
+<body>
+    <!--預設字體12pt 網頁預設字體16px 兩者同樣大小
+        相對表達 例如幾倍字-->
+    <h1>歡迎來到 完美小鎮h1</h1><!--h是header的意思 而且加粗-->
+    <h1>歡迎來到 完美小鎮h1</h1>
+    <h2>歡迎來到 完美小鎮</h2>
+    <h3>歡迎來到 完美小鎮</h3>
+    <h4>歡迎來到 完美小鎮</h4><!--預設大小-->
+    歡迎來到 完美小鎮
+    <h5>歡迎來到 完美小鎮</h5>
+    <h6>歡迎來到 完美小鎮h6</h6>
+
+    歡迎來到 完美小鎮
+    歡迎來到 完美小鎮
+    歡迎來到 完美小鎮
+    歡迎來到 完美小鎮
+    歡迎來到 完美小鎮
+    歡迎來到 完美小鎮
+    <script>
+        for (j = 0; j < 100; j++) {
+            for (i = 1; i < 7; i++) {
+                document.write(`<h${i} class='myStytle'>歡迎來到 完美小鎮h1</h${i}>`);
+            }
+        }
+    </script>
+</body>
+</html>

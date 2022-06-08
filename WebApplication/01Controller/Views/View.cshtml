@@ -1,0 +1,26 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>View</title>
+</head>
+<body>
+    <form method="post" action="/MultiFileUpLoad/Create" enctype="multipart/form-data">
+        請選擇您要上傳的檔案:
+        <div id="fileArea">
+
+        </div>
+        <input id="Button1" name="photo" type="file" value="增加一個檔案" onclick="addF"/>
+        <input id="Submit1" type="Submit" value="上傳檔案" />
+    </form>
+    <h2>@ViewBag.Message </h2>
+    <hr />
+    <a href="/MultiFileUpLoad/showPhoto">點我看圖片</a>
+</body>
+</html>

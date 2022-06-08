@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    X:<input id="txtX" type="text" />
+    Y:<input id="txtY" type="text" /><!--設定兩個框框放滑鼠的座標-->
+    <hr />
+
+    <img src="images/FB_IMG_1638068248161.jpg" />
+    <script>
+        <h2 id="t"></h2>
+        var timer = new Date();//Date是建構子
+        t.innertext = timer;
+        document.write(timer);
+        document.write("<hr>");
+        function myTimer() {
+            var timer = new Date();
+            t.innertext = timer;
+            setTimeout("myTimer()", 1000);
+        }
+        myTimer();
+        //document.write(timer);
+        function getXY(evt) {
+            txtX.value = eve.pageX;
+            txtY.value = eve.pageY;
+        }
+    </script>
+</body>
+</html>

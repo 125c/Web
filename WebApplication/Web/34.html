@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+//函數，一段預先寫好的程式，會有某種特定的功能
+        //內建函數
+        alert("aaa");
+        prompt("wwww");
+
+        var r = Math.random();//此函數的功能為回傳一個0-1的數值，包含0不含1
+        document.write(r);
+        //自訂函數
+        
+        function switchTwoNumber(a,b) {
+            var x = a; y = b;
+            n = x * y;
+            x = n / x;
+            y = n / y;
+            //document.write("x=" + y + ",y=" + y);
+        }
+        switchTwoNumber();
+        switchTwoNumber(100, 200);
+        switchTwoNumber(44, 55);
+        var a = parseInt(prompt("請輸入第一個數")), b = parseInt(prompt("請輸入第2個數"));
+        
+        document.write("你輸入的第一個數是" + a + "第二個數為" + b);
+        switchTwoNumber(a, b);
+        document.write("交換後第一個數是" + a + "第二個數是" + b);
+        //原生型寫法
+        document.write("<hr>");
+        //另一種寫法
+    </script>
+
+</body>
+</html>

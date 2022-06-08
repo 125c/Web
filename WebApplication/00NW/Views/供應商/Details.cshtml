@@ -1,0 +1,106 @@
+﻿@model _00NW.Models.供應商
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>供應商</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.供應商1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.供應商1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.連絡人)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.連絡人)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.連絡人職稱)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.連絡人職稱)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.地址)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.地址)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.城市)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.城市)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.行政區)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.行政區)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.郵遞區號)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.郵遞區號)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.國家地區)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.國家地區)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.電話)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.電話)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.傳真電話)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.傳真電話)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.首頁)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.首頁)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.供應商編號 }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>28鄭巧玉作業三</title>
+    <link href="StyleSheet1.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="controlPanel">
+        <select id="song">
+            <!--這裡是物件的動作-->
+            <!--<option value="Music/elysees.mp3">elysees.mp3</option>
+            <option value="Music/Ado踊.mp3">Ado踊.mp3</option>
+            <option value="Music/Attack on Titan.mp3">Attack on Titan.mp3</option>
+            <option value="Music/Only my railgun violin.mp3">Only my railgun violin.mp3</option>
+            <option value="Music/The Rumbling.mp3">The Rumbling.mp3</option>
+            <option value="Music/Romance.mp3">Romance.mp3</option>
+            <option value="Music/Sakayume.mp3">Sakayume.mp3</option>-->
+        </select>
+        <hr />
+        <span onclick="Play()" id="btnPlay" title="播放">4</span>
+        <span onclick="Stop()" title="停止"><</span>
+        <!--<span onclick="Pause()">;</span>-->
+        <span onclick="changeTime(-5)" title="後退5秒">7</span>
+        <span onclick="changeTime(5)" title="快進5秒">8</span>
+        <span onclick="changeSong(-1)" title="上一首">9</span>
+        <span onclick="changeSong(1)" title="下一首">:</span>
+        <span onclick="setMuted()" title="老闆過來了">V</span>
+        <span onclick="setLoop()" title="單曲循環">q</span>
+        <span onclick="setRandom()" title="隨便下一首">s</span>
+        <span onclick="setAllLoop()" title="全部聽到爽">`</span>
+        <span onclick="songBook()" title="編輯我的歌本">@</span>
+        <hr />
+        <input id="progress" type="range" value="0" oninput="setTimeBar()" />
+        <input id="volValue" type="range" max="100" min="0" value="100" oninput="setVolume()" /><!--播放條-->
+        <!--onchange 要放開才會輸入值，拖的時候還在改變數值-->
+        <input id="Button1" type="button" class="btnVol" value="-" onclick="changeVolume(-10)" />
+        <input id="Button2" type="button" class="btnVol" value="+" onclick="changeVolume(10)" />
+        <input id="volinfo" type="text" value="100" readonly />
+        <hr />
+        <div id="info">
+            <marquee>按下播放鈕</marquee>
+            <div>00:00   /    00:00</div><!--current time/duration-->
+            <div>狀態</div>
+        </div>
+
+        <div id="book" class="">
+            <div ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div title="Music/elysees (mp3cut.net).mp3">elysees.mp3</div>
+                <div title="Music/Ado踊 (mp3cut.net).mp3">高難度小提琴演奏版【Ado】- 踊⎟Violin Cover by Boy</div>
+                <div title="Music/Attack on Titan (mp3cut.net).mp3">『僕の戦争 / 神聖注目樂團』 進擊的巨人 The Final Season 片頭曲 OP (TV Size) 瘋狂炫技小提琴┃BoyViolin</div>
+                <div title="Music/Only my railgun violin (mp3cut.net).mp3">科學超電磁砲主題曲「Only My Railgun」⎟ 小提琴 Violin Cover by BOY</div>
+                <div title="Music/The Rumbling (mp3cut.net).mp3">極炫技！進擊的巨人 The Final Season Part 2 片頭曲 OP 『The Rumbling / SiM』 有如地鳴般的小提琴演奏┃BoyViolin</div>
+                <div title="Music/Romance (mp3cut.net).mp3">跨越百年時空的愛情 『大正浪漫 / YOASOBI』 小提琴演奏┃BoyViolin</div>
+                <div title="Music/Sakayume (mp3cut.net).mp3">劇場版 咒術迴戰 ０ 片尾曲 ED 『逆夢 / King Gnu』 小提琴演奏┃BoyViolin</div>
+            </div>
+            <div ondrop="drop(event)" ondragover="allowDrop(event)">
+            </div>
+            <button onclick="UpdateMusic()">更新歌單</button>
+        </div><hr>
+        <a href="https://www.instagram.com/boy_violin/">ins</a><br>
+        <a href="https://www.youtube.com/c/BOYTheViolinist">YT</a><br>
+        <a href="https://www.facebook.com/BoyViolin-637525273543564/">FB</a><br>
+        <a href="https://shopee.tw/alphonseboy">Shopee</a>
+    </div>
+    <hr>
+    
+    <a href="https://www.instagram.com/boy_violin/"><img src="images2/Koala.jpg"  width="200" /></a><br>
+    <a href="https://www.youtube.com/c/BOYTheViolinist">YT</a><br>
+    <a href="https://www.facebook.com/BoyViolin-637525273543564/">FB</a><br>
+    <a href="https://shopee.tw/alphonseboy">Shopee</a>
+    <audio id="music">
+        <!--<audio id="music" controls="controls"> 這裡有原版-->
+        <source type="audio/mpeg" />
+    </audio>
+
+    <script src="HW3.js"></script>
+</body>
+</html>

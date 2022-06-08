@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "我的第一個Razer";
+}
+
+<h2>Razer</h2>
+
+@{
+    string name = "Az";
+    var name2 = "wwww";
+    int Math = 28, Chi = 84, Eng = 56;
+    bool flage = true;
+    <h3>哈囉@(name2)握</h3>
+    @:哈囉握 @*純字串*@
+    @:哈囉 @name 握
+    @:哈囉@(name)握
+
+    if (1 == 1)
+    {
+        Response.Write("yeeeeeeeeeeee");
+    }
+}
+<h3>哈囉@(name2)握</h3>@*區塊外野可以*@
+<h6>@Math+@Chi+@Eng=@(Math+Eng+Chi)</h6>
+<hr />
+@if (flage)
+{
+    <h3>您已登入月球</h3>
+}
+else
+{
+    <h3>您已登入火星</h3>
+}
+@{
+string[] NMname = { "瑞豐夜市", "新堀江商圈", "六合夜市", "青年夜市", "花園夜市", "大東夜市", "武聖夜市" };
+}
+<ul>
+    @foreach(var item in NMname)
+            {
+                <li>@item</li>
+            }
+</ul>

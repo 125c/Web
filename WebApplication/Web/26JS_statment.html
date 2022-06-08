@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        var a = 10;
+        a = 20;//指定運算 a=20
+        a = a + 10;//算術指定運算a=30（20+10）
+        a += 10;//算術指定運算a=30（30+10）
+        a -= 8;//算術指定運算a=32（40-8）
+        a *= 10;//算術指定運算a=320（32*10）
+        a /= 32;//算術指定運算a=10（320/32）
+
+        a++;//相當於a=a+1,a+=1
+        document.write(a);
+        document.write("<hr />");
+
+        //隨堂練習兩數交換。宣告變數x與y為任意數值，並將兩數的值交換
+        var x = 123; y = 456;
+        var y = 123; x = 456;
+
+        document.write("x=" + x + "y=" + y);
+
+        n = x * y;
+        x = n / x;
+        y = n / y;
+        //聖智解
+        var z = x; //x=123y=456z=123
+        x = y;//x=456y=123z=123
+        y = z;
+        //老師解
+        //兩數交換加上不可宣告新的變數
+        document.write("<hr />");
+        var x = 3; y = 5;
+        x = x + y;//變成x=8y=3
+        y = x - y;//把y變成8-3
+        x = x - y;//再把原本x=8用y減掉
+        document.write("x=" + x + "y=" + y);
+        document.write("<hr />");
+        //觀察以下輸出值的變化
+        document.write(3.0);
+        document.write("<br>");
+        document.write(3.4);
+        document.write("<br>");
+        //parseInt()將值轉型為整數型態
+        document.write(parseInt(3.0));
+        document.write("<br>");
+        document.write(parseInt(3.5));
+        document.write("<br>");
+        document.write(parseInt("3.0"));
+        document.write("<br>");
+        document.write(parseInt("3.5"));
+        document.write("<br>");
+
+        //typeof()看出某個值的資料型態
+        document.write("<hr />");
+        document.write(typeof(3.0));
+        document.write("<br>");
+        document.write(typeof (parseInt(3.0)));
+        document.write("<br>");
+        document.write(typeof (parseInt("3.5")));
+        document.write("<hr />");
+        //開頭是數字的還會讀出數字 
+        document.write(parseInt("3343jsdlafjllsjflas"));
+        document.write("<br>");
+        document.write(parseInt("asdfsdf3343jsdlafjllsjflas"));//Nan not a number
+        document.write("<br>");
+        document.write(parseInt("asdfsdfjsdlafjllsjflas3343"));
+        document.write("<br>");
+        document.write(parseInt("12e5"));
+        document.write("<br>");
+        document.write(parseInt("55", 8));//將八進位的55以十進位顯示
+        document.write("<br>");
+        document.write(parseInt("5c", 16));//將十六進位的55以十進位顯示
+        document.write("br>");
+        document.write(parseFloat(5));//以浮點數顯示
+        document.write("<br>");
+        document.write(typeof (parseFloat(5)));
+        document.write("<hr />");
+        //匈牙利命名法
+        var strName = "jack", intName = 123, blnGenger = true;
+        var result = "";//初始化result變數為空字串
+
+        result = strName + blnGenger;  //string+boolean=>string 隱含轉換
+        document.write("<br>");
+        document.write(result);
+
+        result = strName + intNumber;  //string+number=>string
+        document.write("<br>");
+        document.write(result);
+
+
+        result = intNumber + blnGenger;  //number+boolean=>number
+        document.write("<br>");
+        document.write(result);
+        //看起來是後面遷就前面
+        result = blnGenger + strName;  //boolean+string=>string
+        document.write("<br>");
+        document.write(result);
+
+
+        result = intNumber + strName;  //number+string=>string
+        document.write("<br>");
+        document.write(result);
+
+
+        result = blnGenger + intNumber;  //boolean+number=>number
+        document.write("<br>");
+        document.write(result);
+        //布林會遷就str 數值遷就字串
+
+    </script>
+
+</body>
+</html>
