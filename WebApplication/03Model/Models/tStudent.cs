@@ -19,7 +19,7 @@ namespace _03Model.Models
     {
         [DisplayName("學號")]
         [Required(ErrorMessage ="學號必甜喔")]
-        [RegularExpression("[12][0-5][6-9][0-9]{3}",ErrorMessage ="學號格式錯誤")]
+        [RegularExpression("[12][0-5][6-9][0-9]{3}",ErrorMessage = "學號格式錯誤120569093")]
         //[0-9]{3}0-9打3碼 {3,}3次以上 {,3}最多3次{3,10}最多共10碼
         public string fStuId { get; set; }
 
