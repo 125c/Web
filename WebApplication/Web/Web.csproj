@@ -93,6 +93,8 @@
     <Content Include="34.html" />
     <Content Include="35.html" />
     <Content Include="36.html" />
+    <Content Include="38jQuery - DOM.html" />
+    <Content Include="38jQuery.html" />
     <Content Include="HW2.html" />
     <Content Include="23CSS_layout.html" />
     <Content Include="22CSS_pointer2.html" />
@@ -110,6 +112,11 @@
     <Content Include="images\Jellyfish.jpg" />
     <Content Include="images\Penguins.jpg" />
     <Content Include="images\Tulips.jpg" />
+    <None Include="Scripts\jquery-3.6.0.intellisense.js" />
+    <Content Include="Scripts\jquery-3.6.0.js" />
+    <Content Include="Scripts\jquery-3.6.0.min.js" />
+    <Content Include="Scripts\jquery-3.6.0.slim.js" />
+    <Content Include="Scripts\jquery-3.6.0.slim.min.js" />
     <Content Include="StyleSheet1.css" />
     <Content Include="作業二素材檔\bottom.jpg" />
     <Content Include="作業二素材檔\left.jpg" />
@@ -130,6 +137,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.6.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.6.0.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
