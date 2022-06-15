@@ -26,6 +26,8 @@
                     item += "<h4>" + data[i].Tel + "</h4>";
                     item += "<h4>" + data[i].Address + "</h4>";
                     item += "<img src='" + data[i].Photo + "'</>";
+                    item +=`<p><a href="https://www.google.com.tw/maps/search/${data[i].Address}" target="_blank">我要看地圖</a></p>`
+                    item += "<hr>";
                     $('#container').append(item);
                 }
             },
