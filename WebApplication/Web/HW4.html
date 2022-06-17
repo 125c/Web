@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #container {
+            width: auto;
+            margin: auto;
+        }
+        #container>div {
+            box-shadow:0px 0px 20px black;
+            border-radius:10px;
+            margin-top:10px;
+            padding:15px;
+            float:left;
+            margin:20px;
+        }
+            #container >div> img {
+                width:inherit; 
+            }
+
+        .center {
+            text-align:center;
+        }
+        .left {
+            text-align: left;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div id="container">
+        <h1>全國旅遊休閒園區</h1>
+    </div>   
+    <script src="Scripts/jquery-3.6.0.min.js"></script>
+
+    <script>
+        var item = "";
+        $.ajax({
+            type: 'get',
+            url: 'https://data.coa.gov.tw/Service/OpenData/ODwsv/ODwsvAttractions.aspx',
+            success: function (data) {
+                console.log(data);
+                /*$('#container').append("<div id='x'></div>");*/
+                for (var i = 0; i < data.length; i++)
+                {
+                    item = `<div title="${data[i].Introduction}">
+                            <h2 class="center">  ${data[i].Name}  </h2>
+                            <div class="center"><img src="  ${data[i].Photo}"  /></div>
+                            <div class="center">
+                                <span>|電話：${data[i].Tel}  <span> |
+                                <span><a href="https://www.google.com.tw/maps/search/${data[i].Address}" target="_blank" >地址  ${data[i].Address}  </a><span> |
+                            </div>
+                    </div>`;
+                    /*$('#x').append(item);*/
+                    $('#container').append(item);
+                }
+            },
+            error: function () {
+                alert('錯拉');
+            }
+        });
+        function steStytle1() { 
+            $('#container > h1:first-child').css({
+                'box-shadow': '0px 0px 20px black',
+                'border-radius':'10px',
+                'padding': '15px',
+                'text-align':'center',
+                'background-color': '#FFFACD',
+                'color': 'black'
+            });
+            setTimeout("steStytle2()",1000)
+        }
+        function steStytle2() {
+            $('#container > h1:first-child').css({
+                'box-shadow': '0px 0px 20px black',
+                'border-radius': '10px',
+                'padding': '15px',
+                'text-align': 'center',
+                'background-color': '#696969',
+                'color': 'white'
+            });
+            setTimeout("steStytle1()", 1000)
+        }
+        steStytle1();
+    </script>
+</body>
+</html>
