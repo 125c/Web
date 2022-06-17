@@ -5,22 +5,24 @@
     <title></title>
     <style>
         #container {
-            width: auto;
+            width: 100%;
             margin: auto;
+            display:flex;
+            flex-wrap:wrap;
         }
         #container>div {
             /*box-shadow:0px 0px 20px black;*/
             border-radius:10px;
             margin-top:10px;
             padding:15px;
-            float:left;
             margin:20px;
+            width:230px;
         }
         div:hover {
             box-shadow: 0px 0px 20px black;
         }
-            #container >div> img {
-                width:inherit; 
+            #container >div> div> img {
+                width:200px; 
             }
 
         .center {
@@ -33,10 +35,7 @@
     </style>
 </head>
 <body>
-    
-    <div id="container">
-        <h1>全國旅遊休閒園區</h1>
-    </div>   
+    <h1>全國旅遊休閒園區</h1>  
     <script src="Scripts/jquery-3.6.0.min.js"></script>
 
     <script>
@@ -54,7 +53,7 @@
                             <div class="center"><img src="  ${data[i].Photo}"  /></div>
                             <div class="center">
                                 <span>|電話：${data[i].Tel}  <span> |
-                                <span><a href="https://www.google.com.tw/maps/search/${data[i].Address}" target="_blank" >地址  ${data[i].Address}  </a><span> |
+                                <span>地址<a href="https://www.google.com.tw/maps/search/${data[i].Address}" target="_blank" >  ${data[i].Address}  </a><span> |
                             </div>
                     </div>`;
                     /*$('#x').append(item);*/
