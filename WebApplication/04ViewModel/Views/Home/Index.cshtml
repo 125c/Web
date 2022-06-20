@@ -11,33 +11,64 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <table border="1">
-        <tr>
-            <td>
-                部門
-                <ul>
+    <div class="container">
+        <h1 class="text-center well">公司員工資料管理</h1>
+        <p>
+            @Html.ActionLink("新增資料", "Create")
+            <a href="#" class="btn btn-primary btn-sm">新增</a>
+        </p>
+        <div class="row">
+            <div class="col-xs-3">
+                <p class="alert alert-success text-center">部門</p>
+                <ul class="list-group text-center">
                     @foreach (var item in Model.department)
                     {
-                        <li>@Html.ActionLink(@item.fDepName, "Index", new { depId=item.fDepId})</li>
-                  
+                        <li class="list-group-item">@Html.ActionLink(@item.fDepName, "Index", new { depId = item.fDepId })</li>
                     }
                 </ul>
-            </td>
-            <td>
-                員工資料
-                <ul>
-                    @foreach (var item in Model.employee)
-                    {
-                        <li>@item.fEmpId @item.fName @item.fPhone</li>
-                    }
-                </ul>
-            </td>
-        </tr>
-    </table>
+            </div>
+            <div class="col-xs-9">
+                <p class="alert alert-info text-center">@(ViewBag.deptName)員工資料</p>
+                @if (Model.employee.Count == 0) 
+                {
+                    <h5 class="text-danger">該部門目前沒有資料</h5>
+                }
+                else 
+                {
+                    <table class="table table-hover">
+                        <tr>
+                            <td>工號</td>
+                            <td>姓名</td>
+                            <td>電話</td>
+                            <td>刪除</td>
+                        </tr>
+                        @foreach (var item in Model.employee)
+                        {
+                            <tr>
+                                <td>
+                                    @item.fEmpId
+                                </td>
+                                <td>
+                                    @item.fName
+                                </td>
+                                <td>
+                                    @item.fPhone
+                                </td>
+                                <td>
+                                    <a href="#" class="btn btn-danger btn-sm">刪除</a>
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                }
+
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
