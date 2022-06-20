@@ -36,6 +36,7 @@
 </head>
 <body>
     <h1>全國旅遊休閒園區</h1>  
+    <div id="container"></div>
     <script src="Scripts/jquery-3.6.0.min.js"></script>
 
     <script>
@@ -45,7 +46,6 @@
             url: 'https://data.coa.gov.tw/Service/OpenData/ODwsv/ODwsvAttractions.aspx',
             success: function (data) {
                 console.log(data);
-                /*$('#container').append("<div id='x'></div>");*/
                 for (var i = 0; i < data.length; i++)
                 {
                     item = `<div title="${data[i].Introduction}">
@@ -56,7 +56,6 @@
                                 <span>地址<a href="https://www.google.com.tw/maps/search/${data[i].Address}" target="_blank" >  ${data[i].Address}  </a><span> |
                             </div>
                     </div>`;
-                    /*$('#x').append(item);*/
                     $('#container').append(item);
                 }
             },
@@ -64,28 +63,6 @@
                 alert('錯拉');
             }
         });
-        function steStytle1() { 
-            $('#container > h1:first-child').css({
-                'box-shadow': '0px 0px 20px black',
-                'border-radius':'10px',
-                'padding': '15px',
-                'text-align':'center',
-                'background-color': '#FFFACD',
-                'color': 'black'
-            });
-            setTimeout("steStytle2()",1000)
-        }
-        function steStytle2() {
-            $('#container > h1:first-child').css({
-                'box-shadow': '0px 0px 20px black',
-                'border-radius': '10px',
-                'padding': '15px',
-                'text-align': 'center',
-                'background-color': '#696969',
-                'color': 'white'
-            });
-            setTimeout("steStytle1()", 1000)
-        }
         steStytle1();
     </script>
 </body>
