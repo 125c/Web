@@ -35,9 +35,10 @@
     </style>
 </head>
 <body>
-    <h1>全國旅遊休閒園區</h1>  
+    <h1>全國旅遊休閒園區</h1>
     <div id="container"></div>
     <script src="Scripts/jquery-3.6.0.min.js"></script>
+    <script src="js/Unit.js"></script>
 
     <script>
         var item = "";
@@ -46,16 +47,15 @@
             url: 'https://data.coa.gov.tw/Service/OpenData/ODwsv/ODwsvAttractions.aspx',
             success: function (data) {
                 console.log(data);
-                for (var i = 0; i < data.length; i++)
-                {
+                for (var i = 0; i < data.length; i++) {
                     item = `<div title="${data[i].Introduction}">
-                            <h2 class="center">  ${data[i].Name}  </h2>
-                            <div class="center"><img src="  ${data[i].Photo}"  /></div>
-                            <div class="center">
-                                <span>|電話：${data[i].Tel}  <span> |
-                                <span>地址<a href="https://www.google.com.tw/maps/search/${data[i].Address}" target="_blank" >  ${data[i].Address}  </a><span> |
-                            </div>
-                    </div>`;
+                                <h2 class="center">  ${data[i].Name}  </h2>
+                                <div class="center"><img src="  ${data[i].Photo}"  /></div>
+                                <div class="center">
+                                    <span>|電話：${data[i].Tel}  <span> |
+                                    <span>地址<a href="https://www.google.com.tw/maps/search/${data[i].Address}" target="_blank" >  ${data[i].Address}  </a><span> |
+                                </div>
+                        </div>`;
                     $('#container').append(item);
                 }
             },
