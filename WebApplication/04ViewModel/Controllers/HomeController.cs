@@ -24,7 +24,7 @@ namespace _04ViewModel.Controllers
             };
 
             ViewBag.deptName = db.tDepartment.Where(m => m.fDepId == depId).FirstOrDefault().fDepName;
-
+            ViewBag.deptId = depId;
 
             return View(vme);
         }
@@ -43,6 +43,15 @@ namespace _04ViewModel.Controllers
             db.SaveChanges();
 
             return RedirectToAction("Index", new { depId = emp.fDepId });
+        }
+        [HttpPost]
+        public ActionResult Delete(string id)
+        {
+            var emp=db.tEmployee.Where(m=>m.fEmpId==id).FirstOrDefault();
+            db.tEmployee.Remove(emp);
+            db.SaveChanges();
+            return View();
+
         }
     }
 }

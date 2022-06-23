@@ -10,17 +10,13 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <title>公司員工資料</title>
 
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
     <div class="container">
         <h1 class="text-center well">公司員工資料管理</h1>
-        <p>
-            @Html.ActionLink("新增資料", "Create")
-            <a href="#" class="btn btn-primary btn-sm">新增</a>
-        </p>
         <div class="row">
             <div class="col-xs-3">
                 <p class="alert alert-success text-center">部門</p>
@@ -33,11 +29,16 @@
             </div>
             <div class="col-xs-9">
                 <p class="alert alert-info text-center">@(ViewBag.deptName)員工資料</p>
-                @if (Model.employee.Count == 0) 
+              
+                <p class="text-right">
+                    @Html.ActionLink("新增資料", "Create", new { deptId = ViewBag.deptId },new {@class="btn btn-success"})
+                    
+                </p>
+                @if (Model.employee.Count == 0)
                 {
                     <h5 class="text-danger">該部門目前沒有資料</h5>
                 }
-                else 
+                else
                 {
                     <table class="table table-hover">
                         <tr>
@@ -59,7 +60,10 @@
                                     @item.fPhone
                                 </td>
                                 <td>
-                                    <a href="#" class="btn btn-danger btn-sm">刪除</a>
+                                    @*<a href="Delete/@item.fEmpId" class="btn btn-danger btn-sm" onclick="return confirm('確定要刪除@(item.fName)齁？')">刪除</a>*@
+                                    @Html.ActionLink("刪除", "Delete",new { id = item.fEmpId }, new {@class="btn btn-danger btn-sm",
+                                   onclick = "return confirm('確定要刪除"+item.fName+"齁？')"
+                               })
                                 </td>
                             </tr>
                         }

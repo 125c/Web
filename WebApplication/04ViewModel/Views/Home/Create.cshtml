@@ -2,6 +2,8 @@
 
 @{
     Layout = null;
+    var depId = Request.QueryString["deptId"];
+    var selected = "";
 }
 
 <!DOCTYPE html>
@@ -56,7 +58,8 @@
                         <select id="fDepId" class="form-control" name="fDepId">
                             @foreach (var item in ViewBag.dept)
                             {
-                                <option value="@item.fDepId">@item.fDepName</option>
+                                selected = item.fDepId == Convert.ToInt32(depId) ? "selected" : "";
+                                <option value="@item.fDepId" @selected>@item.fDepName</option>
                             }
                         </select>
 
@@ -67,7 +70,7 @@
 
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Create" class="btn btn-default" />
+                        <input type="submit" value="建立" class="btn btn-default" />
                     </div>
                 </div>
             </div>
