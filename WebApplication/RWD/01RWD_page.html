@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width"/>
+    <title>RWD</title>
+    <style>
+        div{
+            border:10px solid gray;
+            font-size:40px;
+            background-color:pink;
+        }
+        @media screen and (max-width:960px) {
+            div {
+                border: 5px dotted red;
+                font-size: 20px;
+                background-color: black;
+                color: white;
+            }
+        }
+        @media screen and (max-width:480px){
+            div {
+                border: 1px dotted gray;
+                font-size: 10px;
+                background-color: yellow;
+                color:darkslategrey;
+            }
+        }/*大的要寫在上面 else if的原因*/
+    </style>
+</head>
+<body>
+    <div>
+        這個表整理完以後，你會發現s1, i1, u1 等，都拿掉前綴的字串變成一般數字1 2 3。原因是因為如果有前綴是必須要用String 格式儲存，比較浪費空間，而且在程式比對上也會比較消耗資源，一般而言電腦對於處理數字的效率還是比較高一些。
+        另外把在Shop表等分切出來的表中的 xxx_id 改成 id，原因就如同上一篇說的，table 表中的key都是獨立的，shop 的 id 不會是 order 的 id。但是慣例上，如果要記錄在別人的表中，就要把前綴加回去，畢竟column不能用同樣的名稱。
+        所以shop 的 id 在 order裡面被記錄的話，會在order表中以shop_id命名，以此類推。
+        這時候我們就可以把shop_id 設成 foreign key 外(來)鍵，在Shop 表中的 id 是 Shop表中的primary key 主鍵(PK)，但是對應過去的user_id 在 Order 表中則為foreign key 外鍵(FK)。一個Table表中只能有一個主鍵，但是可以有很多外鍵。主鍵與外鍵的配對就形成了Relational 關聯性 ，所以才稱作Relational database 關聯性資料庫。
+        這邊要特別注意的是，在部分的應用程式框架中的ORM系統裡面並沒有規定關聯性之間要明確設定 foreign key constraint (外鍵約束) 。foreign key在資料表建立的時候是要宣告的。它會加快搜尋的速度。但是會強制一定要先刪掉包含 foreign key 的資料才能刪包含primary key的資料。
+        當然，Foreign Key到底要不要設定還是看個人主觀認定，正確的答案通常是要。但是如果以應用程式為主體的概念去看，不要設定對應用程式來說可能比較有主導性。限制也可以都設定在ORM的Model層。在實務上小編也常做反第二正規化去避免Join Table太多層出現太過於複雜的情況。但專案的特性也是需要考量的地方所以這邊就先不多提以免誤導大家。
+        總之第二正規化的目的，就是釐清資料表裡面每一個資料欄位的關係，把不重要（部分相依）的資料另開表格作儲存，而這樣的做法，也正是關聯式資料庫的核心觀念，透過關聯的方式，來降低表內資料的重複性，並降低資料新增或刪除可能的風險，但光是這樣其實還不夠，只有做完第三正規化之後，才算是完成了真正的資料庫正規化作業！
+    </div>
+</body>
+</html>
