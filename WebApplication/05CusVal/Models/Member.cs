@@ -42,7 +42,7 @@ namespace _05CusVal.Models
                     a[i] = Convert.ToInt32(id.Substring(i + 1, 1));
                 }
                 //sum = n1 + n2 * 9 + a[0] * 8 + a[1] * 7 + a[2] * 6 + a[3] * 5 + a[4] * 4 + a[5] * 3 + a[6] * 2 + a[7] + a[8];
-                //換成迴圈
+                //換成迴圈↓
                 sum = n1 + n2 * 9 + a[8];
                 for(int i=0;i<8;i++)
                 {

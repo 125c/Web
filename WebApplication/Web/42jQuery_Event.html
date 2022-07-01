@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>全國農業旅遊休閒園區</title>
+    <style>
+        #container {
+            width: 1000px;
+            margin: auto;
+        }
+            #container>div > div {
+                box-shadow:0px 0px 20px black;
+                border-radius: 10px;
+                margin-top: 10px;
+                padding: 15px;
+            }
+                #container > div > img {
+                    width: inherit;
+                }
+
+        .center {
+            text-align: center;
+   
+        }
+        #switcher span {
+            border:1px solid;
+            font-size:1.5rem;
+            padding:3px;
+            cursor:pointer;
+        }
+        .small{
+            font-size:0.5rem;
+        }
+        .mini {
+            font-size: 0.1rem;
+        }
+        .larger {
+            font-size: 3rem;
+        }
+        .large {
+            font-size: 2rem;
+        }
+        .default {
+            font-size: 1rem;
+        }
+        .selected{
+            background-color:gold;
+            font-weight:900;
+        }
+    </style>
+</head>
+<body>
+    <input id="Button1" type="button" value="button" />
+    <input id="Button2" type="button" value="登入系統" />
+
+    <fieldset id="login">
+        <legend>登入系統</legend>
+        <table>
+            <tr>
+                <td>
+                    帳號:
+                </td>
+                <td>
+                    <input id="Text1" type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    密碼:
+                </td>
+                <td>
+                    <input id="Password1" type="password" />
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input id="Submit1" type="submit" value="登入" />
+                    <input id="Reset1" type="reset" value="重填" />
+                </td>
+
+            </tr>
+        </table>
+    </fieldset>
+
+
+    <hr />
+
+    <div id="container">
+        <h1>全國農業旅遊休閒園區</h1>
+        輸入城市查詢:<input id="txtCity" type="text" />
+        <input id="Button1" type="button" value="查詢" onclick="getTravelData()" />
+        <div id="switcher">
+            <span id="larger">巨</span>
+            <span id="large">大</span>
+            <span id="default">中</span>
+            <span id="small">小</span>
+            <span id="mini">微</span>
+        </div>
+    </div>
+
+    <script src="Scripts/jquery-3.6.0.min.js"></script>
+    <script>
+        //$('#larger').click(function () {
+        //    $('#TravelData').removeClass().addClass('larger');
+        //    $('#switcher>span').removeClass();
+        //    $('#larger').addClass('selected');
+        //});
+        //$('#large').click(function () {
+        //    $('#TravelData').removeClass().addClass('large');
+        //    $('#switcher>span').removeClass();
+        //    $('#large').addClass('selected');
+        //});
+        //$('#default').click(function () {
+        //    $('#TravelData').removeClass().addClass('default');
+        //    $('#switcher>span').removeClass();
+        //    $('#default').addClass('selected');
+        //});
+        //$('#small').click(function () {
+        //    $('#TravelData').removeClass().addClass('small');
+        //    $('#switcher>span').removeClass();
+        //    $('#small').addClass('selected');
+        //});
+        //$('#mini').click(function () {
+        //    $('#TravelData').removeClass().addClass('mini');
+        //    $('#switcher>span').removeClass();
+        //    $('#mini').addClass('selected');
+        //});
+        /*以上重複的東西寫太多次了 先註解掉*/
+        $('#switcher').click(function (evt) {
+            if (evt.target.id != 'switcher') {
+                $('#TravelData').removeClass().addClass(evt.target.id);
+                $('#switcher>span').removeClass();
+                $(evt.target).addClass('selected');
+            }
+            
+        });
+
+
+        $('#login').hide();
+
+        $('#Button2').click(function(){
+            $('#login').slideToggle(2000);
+        });
+        $('#Button1').click(function () {
+            $('#container>h1:first-child').slideToggle(2000);
+        });
+        $('#Button1').click(function () {
+            $('#container>h1:first-child').fadeTo(2000, 0.3);
+        });
+        $('#container>h1:first-child').hide().fadeIn(2000).slideUp(3000).show(1500).fadeTo(2000, 0.3);
+        $('#container>h1:first-child').animate({ 'left': '20000px' }, 2000, 'swing', function () {
+            $(this).hide();
+        });
+
+
+        var item = "";
+        $('#container').append("<div id='TravelData'></div>")
+        getTravelData();
+        function getTravelData() {
+            $('#TravelData').empty();
+            $.ajax({
+                type: 'get',
+                url: `https://data.coa.gov.tw/Service/OpenData/ODwsv/ODwsvAttractions.aspx?$filter=City+like+${$('#txtCity').val()}`,
+                success: function (data) {
+                    console.log(data);
+                    for (var i = 0; i < data.length; i++) {
+                        
+                        item = `<div title="${data[i].Introduction}">
+                                        <h2 class="center"> ${data[i].Name} </h2>
+                                        <div class="center"><img src="${data[i].Photo}" /></div>
+                                        <h3 class="center">
+                                            ${data[i].City} ${data[i].Town}
+                                        </h3 >
+                                        <div class="center">
+                                            <span>電話：${data[i].Tel}<span> |
+                                            <span>地址：${data[i].Address}<span> |
+                                            <a href="https://www.google.com.tw/maps/search/${data[i].Address}" target="_blank">地圖</a>
+                                        </div >
+                                    </div >`;
+                        $('#TravelData').append(item);
+                    }
+                },
+                error: function () {
+                    alert('error');
+                }
+            });
+        }
+        setStyle1();
+        function setStyle1() {
+            $('#container>h1:first-child').css({
+                'box-shadow': '0px 0px 20px yellow',
+                'padding': '15px',
+                'text-align': 'center',
+                'background-color': 'black',
+                'color': 'white'
+            });
+        }
+       
+    </script>
+</body>
+</html>
