@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width"/>
+    <link href="../Content/bootstrap-grid.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+
+    <title></title>
+    <style>
+        .col1{
+            background-color:aqua
+        }
+        .col2 {
+            background-color: burlywood
+        }
+        .col3 {
+            background-color: wheat
+        }
+        .col4 {
+            background-color: darkgray
+        }
+        .col5 {
+            background-color: royalblue
+        }
+        .col6 {
+            background-color: lightpink
+        }
+        .col7 {
+            background-color: cornflowerblue
+        }
+        .col8 {
+            background-color: powderblue
+        }
+        .col9 {
+            background-color: tan
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container" style="border:1px solid black">
+        <div class="row">
+            <div class="col1 col-3">class="col1 col-3"</div>
+            <div class="col2 col-5">class="col2 col-5"</div>
+            <div class="col3 col-4">class="col3 col-4"</div>
+            <!--永遠不會斷-->
+        </div>
+        <div class="row">
+            <div class="col4 col-md-3">class="col4 col-md-3"</div>
+            <div class="col5 col-md-5">class="col5 col-md-5"</div>
+            <div class="col6 col-md-4">class="col6 col-md-4"</div>
+            <!--斷點在md-->
+        </div>
+        <div class="row">
+            <div class="col7 col-lg-4">class="col7 col-lg-4"</div>
+            <div class="col8 col-lg-4">class="col8 col-lg-4"</div>
+            <div class="col9 col-lg-4">class="col9 col-lg-4"</div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col4 col-md-4 col-lg-2">class="col4 col-md-4 col-lg-2"</div>
+            <div class="col5 col-md-4 col-lg-5">class="col5 col-md-4 col-lg-5"</div>
+            <div class="col6 col-md-4 col-lg-5">class="col6 col-md-4 col-lg-5"</div>
+            <!--斷點有兩個https://getbootstrap.com/docs/4.6/layout/overview/-->
+        </div>
+    </div>
+</body>
+</html>
