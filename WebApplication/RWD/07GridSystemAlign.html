@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width"/>
+    <link href="../Content/bootstrap-grid.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+
+    <title></title>
+    <style>
+        .col1{
+            background-color:aqua
+        }
+        .col2 {
+            background-color: burlywood
+        }
+        .col3 {
+            background-color: wheat
+        }
+        .col4 {
+            background-color: darkgray
+        }
+        .col5 {
+            background-color: royalblue
+        }
+        .col6 {
+            background-color: lightpink
+        }
+        .col7 {
+            background-color: cornflowerblue
+        }
+        .col8 {
+            background-color: powderblue
+        }
+        .col9 {
+            background-color: tan
+        }
+        .row {
+            border: 1px solid;
+            height: 200px;
+        }/*設定row的高度*/
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>垂直對齊(相對於row)</h2>
+        <h3>利用row對齊</h3>
+        <div class="row align-items-start">
+            <div class="col3 col-md">Col3</div>
+            <div class="col4 col-md">Col4</div>
+            <div class="col5 col-md">Col5</div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col3 col-md">Col3</div>
+            <div class="col4 col-md">Col4</div>
+            <div class="col5 col-md">Col5</div>
+        </div>
+        <div class="row align-items-end">
+            <div class="col3 col-md">Col3</div>
+            <div class="col4 col-md">Col4</div>
+            <div class="col5 col-md">Col5</div>
+        </div>
+        <hr />
+        <h2>Col自身對齊(相對於row)</h2>
+
+        <div class="row">
+            <div class="col3 col-md align-self-end">Col3</div>
+            <div class="col4 col-md align-self-center">Col4</div>
+            <div class="col5 col-md align-self-start">Col5</div>
+        </div>
+        <hr />
+        <h2>水平對齊(相對於row)</h2>
+        <h3>靠左對齊</h3>
+        <div class="row justify-content-start">
+            <div class="col3 col-md-2">Col3</div>
+            <div class="col4 col-md-2">Col4</div>
+            <div class="col5 col-md-2">Col5</div>
+        </div>
+        <h3>置中對齊</h3>
+        <div class="row justify-content-center">
+            <div class="col3 col-md-2">Col3</div>
+            <div class="col4 col-md-2">Col4</div>
+            <div class="col5 col-md-2">Col5</div>
+        </div>
+        <h3>靠右對齊</h3>
+        <div class="row justify-content-end">
+            <div class="col3 col-md-2">Col3</div>
+            <div class="col4 col-md-2">Col4</div>
+            <div class="col5 col-md-2">Col5</div>
+        </div>
+        <h3>均分對齊</h3>
+        <div class="row justify-content-around">
+            <div class="col3 col-md-2">Col3</div>
+            <div class="col4 col-md-2">Col4</div>
+            <div class="col5 col-md-2">Col5</div>
+        </div>
+        <h3>分散對齊</h3><!--第一個貼著頭 最後一個貼著尾 其他中間均分-->
+        <div class="row justify-content-between">
+            <div class="col3 col-md-2">Col3</div>
+            <div class="col4 col-md-2">Col4</div>
+            <div class="col5 col-md-2">Col5</div>
+        </div>
+        <hr />
+        <h2>移除間隙(gutter)</h2>
+        <div class="row no-gutters">
+            <div class="col3 col-md">Col3</div>
+            <div class="col4 col-md">Col4</div>
+            <div class="col5 col-md">Col5</div>
+        </div>
+        <div class="row">
+            <div class="col3 col-md">Col3</div>
+            <div class="col4 col-md">Col4</div>
+            <div class="col5 col-md">Col5</div>
+        </div>
+    </div>
+</body>
+</html>
