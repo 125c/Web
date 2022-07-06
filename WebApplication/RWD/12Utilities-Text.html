@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    <div class="container">
+        Bootstrap
+        <h1>h1 Bootstrap 4</h1>
+        <h2 class="bg-warning">h2 Bootstrap 4</h2>
+        <h3>h3 Bootstrap 4</h3>
+        <h4>h4 Bootstrap 4</h4>
+        <h5>h5 Bootstrap 4</h5>
+        <h6>h6 Bootstrap 4</h6>
+        <hr />
+        <p class="h1">h1 Bootstrap 4</p>
+        <p class="h2 bg-warning">h2 Bootstrap 4</p>
+        <p class="h3">h3 Bootstrap 4</p>
+        <p class="h4">h4 Bootstrap 4</p>
+        <p class="h5">h5 Bootstrap 4</p>
+        <p class="h6">h6 Bootstrap 4</p>
+        <hr />
+        <sapn class="h1">h1 Bootstrap 4</sapn>
+        <sapn class="h2 bg-warning">h2 Bootstrap 4</sapn>
+        <sapn class="h3">h3 Bootstrap 4</sapn>
+        <sapn class="h4">h4 Bootstrap 4</sapn>
+        <sapn class="h5">h5 Bootstrap 4</sapn>
+        <sapn class="h6">h6 Bootstrap 4</sapn>
+        <hr />
+        <p class="h1">This is My Website Title<small>sub title</small></p>
+        <p class="h2">This is My Website Title<small>sub title</small></p>
+        <p class="h3">This is My Website Title<small>sub title</small></p>
+        <p class="h4">This is My Website Title<small>sub title</small></p>
+        <hr />
+
+
+        <h2 class="bg-success text-light">Ajax and WebAPI Code <small>Restful</small></h2>
+
+        <pre class="bg-light">
+        &lt;script&gt;
+        <code>
+                var item = "";
+                $.ajax({
+                    type: 'get',
+                    url: 'https://api.kcg.gov.tw/api/service/get/a0d61f1f-5727-477d-bde0-218f88a46813',
+                    success: function (data) {
+                        console.log(data.data);
+
+                        item = "&lt;table border='1' width=1200 style='margin:auto'>";
+                        item += "&lt;tr&gt;";
+                        item += "&lt;th&gt;年度&lt;/th&gt;";
+                        item += "&lt;th&gt;項目&lt;/th&gt;";
+                        item += "&lt;th&gt;稅目別&lt;/th&gt;";
+
+                        item += "&lt;/tr>";
+                        for (i = 0; i < data.data.length; i++) {
+                            item += "&lt;tr&gt;";
+                            item += "&lt;td&gt;" + data.data[i].資料年度 + "&lt;/td&gt;";
+                            item += "&lt;td&gt;" + data.data[i].統計項目 + "&lt;/td&gt;";
+                            item += "&lt;td&gt;" + data.data[i].稅目別 + "&lt;/td&gt;";
+
+                            item += "&lt;/tr&gt;";
+                        }
+                        item += "&lt;/table&gt;";
+
+                        $('#container').append(item);
+                    },
+                    error: function () {
+                        alert('Error!!');
+                    }
+                });
+            </code>
+        &lt;/script&gt;
+    </pre>
+
+
+        <h1><code>警告!!!!!</code></h1>
+        <p>如果您要使用Javascript的彈出視窗功能,您可使用<code>alert('警告')</code>這樣的語法</p>
+        <hr />
+
+        <span>請按下<mark>Crtl+F</mark>進行本文搜尋</span>
+        <span>請按下<kbd>Crtl+F</kbd>進行本文搜尋</span>
+    </div>
+
+
+
+</body>
+</html>

@@ -70,6 +70,8 @@
   <ItemGroup>
     <Content Include="01RWD_page.html" />
     <Content Include="02Bootstrap_test.html" />
+    <Content Include="10Utilities-Flex.html" />
+    <Content Include="09Utilities-Display.html" />
     <Content Include="08GridSystemOrder.html" />
     <Content Include="07GridSystemAlign.html" />
     <Content Include="06GridSystemForPhone.html" />
