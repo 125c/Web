@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width"/>
+    <link href="../Content/bootstrap-grid.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <title></title>
+</head>
+<body>
+    <div class="container">
+
+        <h2 class="text-center mt-4 mb-3">Customer Data List</h2>
+        <input id="Text1" type="text" />
+        <input id="Submit1" type="submit" value="送出" />
+        <table id="table1" class="table text-dark table-hover shadow-lg border border-info">
+        </table>
+    </div>
+    <script src="../Scripts/jquery-3.4.1.min.js"></script>
+    <script>
+        let item = "<thead><tr class='bg-dark text-white text-center'><th>CustomerID</th><th>CompanyName</th><th>ContactName</th><th>ContactTitle</th><th>Address</th><th>City</th><th>Country</th></tr></thead>";
+        $.ajax({
+            type: 'get',
+            url: 'http://localhost:53913/api/values',
+            success: function (data) {
+                console.log(data);
+                item +="<tbody>"
+                for (let d of data) {
+                    item += `<tr><td>${d.CustomerID}</td><td>${d.CompanyName}</td><td>${d.ContactName}</td><td>${d.ContactTitle}</td><td>${d.Address}</td><td>${d.City}</td><td>${d.Country}</td></tr>`;
+                }
+                item += "</tbody>"
+                $('#table1').append(item);
+            }
+        });
+
+    </script>
+</body>
+</html>

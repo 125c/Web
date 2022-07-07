@@ -77,6 +77,8 @@
     <Content Include="06GridSystemForPhone.html" />
     <Content Include="05GridSystemForPad.html" />
     <Content Include="04GridSystemForDesktop.html" />
+    <Content Include="12Utilities-Text.html" />
+    <Content Include="13Utilities-Text2.html" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />

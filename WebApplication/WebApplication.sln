@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RWD", "RWD\RWD.csproj", "{E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HW5", "HW5\HW5.csproj", "{947E3F3A-2F2C-4E20-A64B-C286445C640B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06webAPI", "06webAPI\06webAPI.csproj", "{E64FB556-0DEF-4A23-930F-ABB6D2723F02}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{947E3F3A-2F2C-4E20-A64B-C286445C640B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{947E3F3A-2F2C-4E20-A64B-C286445C640B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{947E3F3A-2F2C-4E20-A64B-C286445C640B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E64FB556-0DEF-4A23-930F-ABB6D2723F02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E64FB556-0DEF-4A23-930F-ABB6D2723F02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E64FB556-0DEF-4A23-930F-ABB6D2723F02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E64FB556-0DEF-4A23-930F-ABB6D2723F02}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
