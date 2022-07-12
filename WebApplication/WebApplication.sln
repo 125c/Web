@@ -25,6 +25,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HW5", "HW5\HW5.csproj", "{9
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06webAPI", "06webAPI\06webAPI.csproj", "{E64FB556-0DEF-4A23-930F-ABB6D2723F02}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HerLin", "HerLin\HerLin.csproj", "{37B657CE-C74B-48E6-B66D-0B8C498BB4D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinsFormsApp", "WinsFormsApp\WinsFormsApp.csproj", "{59DBF745-3514-4A40-82C8-9282A0C9AC34}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +79,14 @@ Global
 		{E64FB556-0DEF-4A23-930F-ABB6D2723F02}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E64FB556-0DEF-4A23-930F-ABB6D2723F02}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E64FB556-0DEF-4A23-930F-ABB6D2723F02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37B657CE-C74B-48E6-B66D-0B8C498BB4D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37B657CE-C74B-48E6-B66D-0B8C498BB4D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37B657CE-C74B-48E6-B66D-0B8C498BB4D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37B657CE-C74B-48E6-B66D-0B8C498BB4D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59DBF745-3514-4A40-82C8-9282A0C9AC34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59DBF745-3514-4A40-82C8-9282A0C9AC34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59DBF745-3514-4A40-82C8-9282A0C9AC34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59DBF745-3514-4A40-82C8-9282A0C9AC34}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

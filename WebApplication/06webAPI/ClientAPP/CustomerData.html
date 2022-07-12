@@ -10,28 +10,66 @@
     <div class="container">
 
         <h2 class="text-center mt-4 mb-3">Customer Data List</h2>
-        <input id="Text1" type="text" />
-        <input id="Submit1" type="submit" value="送出" />
+        <div class="form-group row">
+            <label class="col-2">請輸入CostomerID</label>
+            <div class="col-8">
+                <input id="txtCustomerID" type="text" class="form-control" />
+            </div>
+            <div class="col-2">
+                <button class="btn btn-primary btn-block" id="btnSearch">查詢</button>
+            </div>
+        </div>
         <table id="table1" class="table text-dark table-hover shadow-lg border border-info">
         </table>
     </div>
     <script src="../Scripts/jquery-3.4.1.min.js"></script>
     <script>
-        let item = "<thead><tr class='bg-dark text-white text-center'><th>CustomerID</th><th>CompanyName</th><th>ContactName</th><th>ContactTitle</th><th>Address</th><th>City</th><th>Country</th></tr></thead>";
-        $.ajax({
-            type: 'get',
-            url: 'http://localhost:53913/api/values',
-            success: function (data) {
-                console.log(data);
-                item +="<tbody>"
-                for (let d of data) {
-                    item += `<tr><td>${d.CustomerID}</td><td>${d.CompanyName}</td><td>${d.ContactName}</td><td>${d.ContactTitle}</td><td>${d.Address}</td><td>${d.City}</td><td>${d.Country}</td></tr>`;
+        let item = "";
+        GetList();
+        function GetList() {
+            $('#table1').empty();
+            item = "<thead><tr class='bg-dark text-white text-center'><th>CustomerID</th><th>CompanyName</th><th>ContactName</th><th>ContactTitle</th><th>Address</th><th>City</th><th>Country</th></tr></thead>";
+            $.ajax({
+                type: 'get',
+                url: 'http://localhost:53913/api/values',
+                success: function (data) {
+                    console.log(data);
+                    item += "<tbody>";
+                    for (let d of data) {
+                        item += `<tr><td>${d.CustomerID}</td><td>${d.CompanyName}</td><td>${d.ContactName}</td><td>${d.ContactTitle}</td><td>${d.Address}</td><td>${d.City}</td><td>${d.Country}</td></tr>`;
+                    }
+                    item += "</tbody>";
+                    $('#table1').append(item);
                 }
-                item += "</tbody>"
-                $('#table1').append(item);
+            });
+        }
+        //var btnSearch = document.getElementById("btnSearch");
+        //btnSearch.addEventListener('click', function () { })
+
+        $('#btnSearch').click(function () {
+            if ($('#txtCustomerID').val() == "") {
+                GetList();
+            }
+            else {
+                $('#table1').empty();
+                item = "<thead><tr class='bg-dark text-white text-center'><th>CustomerID</th><th>CompanyName</th><th>ContactName</th><th>ContactTitle</th><th>Address</th><th>City</th><th>Country</th></tr></thead>";
+                $.ajax({
+                    type: 'get',
+                    url: 'http://localhost:53913/api/values/' + $('#txtCustomerID').val(),
+                    success: function (d) {
+                        if (d == null) {
+                            $('#table1').append("<p class='bg-dark text-white text-center'>查無資料</p>")
+                            
+                        } else {
+                            item += "<tbody>";
+                            item += `<tr><td>${d.CustomerID}</td><td>${d.CompanyName}</td><td>${d.ContactName}</td><td>${d.ContactTitle}</td><td>${d.Address}</td><td>${d.City}</td><td>${d.Country}</td></tr>`;
+                            item += "</tbody>";
+                            $('#table1').append(item);
+                        }
+                    }
+                });
             }
         });
-
     </script>
 </body>
 </html>
