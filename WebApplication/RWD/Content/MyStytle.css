@@ -1,0 +1,14 @@
+﻿body {
+
+}
+caption {
+    color: #D3A4FF;
+    text-align: center;
+    caption-side: top;
+    font-size:1.3rem;
+}
+.table-hover tbody tr:hover {
+    color: #6C3365;
+    background-color: #FFFFAA;
+    font-size:1.5rem;
+}

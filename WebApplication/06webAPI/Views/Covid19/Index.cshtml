@@ -1,0 +1,65 @@
+﻿@model IEnumerable<_06webAPI.Models.Covid19>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.a01)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.a02)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.a03)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.a04)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.a05)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.a06)
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.a01)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.a02)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.a03)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.a04)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.a05)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.a06)
+        </td>
+       
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
