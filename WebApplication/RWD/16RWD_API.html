@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    <div class="container" id="container">
+        <h1 class="text-center bg-success text-white pt-3 pb-3 mt-3 mb-3 rounded shadow"><strong>全國農業旅遊休閒園區</strong></h1>
+    </div>
+
+    <script src="Scripts/jquery-3.0.0.min.js"></script>
+    <script src="Scripts/bootstrap.bundle.min.js"></script>
+    <script>
+        var item = "";
+        $.ajax({
+            type: 'get',
+            url: 'https://data.coa.gov.tw/Service/OpenData/ODwsv/ODwsvAttractions.aspx',
+            success: function (data) {
+                console.log(data);
+                item = `<div class="row">`;
+                for (var i = 0; i < data.length; i++) {
+                    item += `<div data-toggle="tooltip" data-placement="bottom" title="${data[i].Introduction}" class="mt-2 col-lg-3 shadow-sm border border-dark">
+                                        <h3 class="text-center text-primary"> ${data[i].Name} </h3>
+                                        <div ><img src="${data[i].Photo}" class="img-thumbnail"/></div>
+                                        <h4 class="text-center text-success">
+                                            ${data[i].City} ${data[i].Town}
+                                        </h4 >
+                                        <div >
+                                            <span>電話：${data[i].Tel}<span> <br>
+                                            <span>地址：${data[i].Address}<span> <br>
+                                            <a href="https://www.google.com.tw/maps/search/${data[i].Address}" target="_blank" class="btn btn-outline-danger btn-block mb-2">地圖</a>
+                                        </div >
+                                    </div >`;
+                }
+                item += `</div>`;
+                $('#container').append(item);
+            },
+            error: function () {
+                alert('error');
+            }
+        });
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+
+    </script>
+</body>
+</html>

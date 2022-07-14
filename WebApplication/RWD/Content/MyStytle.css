@@ -12,3 +12,6 @@ caption {
     background-color: #FFFFAA;
     font-size:1.5rem;
 }
+img:hover {
+    box-shadow:1px 1px 1px #ff0000;
+}
