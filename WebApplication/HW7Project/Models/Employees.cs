@@ -32,8 +32,6 @@ namespace HW7Project.Models
         [Required(ErrorMessage = "密碼一定要有")]
         [DisplayName("密碼")]
         [DataType(DataType.Password)]
-        //[MinLength(8,ErrorMessage =("密碼最少8碼"))]
-        //[MaxLength(20,ErrorMessage =("密碼最多20碼"))]
         public String Password
         {
             get

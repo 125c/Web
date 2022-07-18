@@ -4,10 +4,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>社畜列表</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("新增社畜", "Create")
 </p>
 <table class="table">
     <tr>
@@ -41,9 +41,9 @@
             @Html.DisplayFor(modelItem => item.Password)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.EmployeesId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.EmployeesId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.EmployeesId })
+            @Html.ActionLink("編輯", "Edit", new { id=item.EmployeesId }) |
+            @Html.ActionLink("內容", "Details", new { id=item.EmployeesId }) |
+            @Html.ActionLink("賜死", "Delete", new { id=item.EmployeesId })
         </td>
     </tr>
 }
