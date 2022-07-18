@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HerLin", "HerLin\HerLin.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinsFormsApp", "WinsFormsApp\WinsFormsApp.csproj", "{59DBF745-3514-4A40-82C8-9282A0C9AC34}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HW7Project", "HW7Project\HW7Project.csproj", "{6227463C-3C06-4ECB-BBC2-C76F09DB1C7D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{59DBF745-3514-4A40-82C8-9282A0C9AC34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59DBF745-3514-4A40-82C8-9282A0C9AC34}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59DBF745-3514-4A40-82C8-9282A0C9AC34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6227463C-3C06-4ECB-BBC2-C76F09DB1C7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6227463C-3C06-4ECB-BBC2-C76F09DB1C7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6227463C-3C06-4ECB-BBC2-C76F09DB1C7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6227463C-3C06-4ECB-BBC2-C76F09DB1C7D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
