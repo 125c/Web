@@ -10,8 +10,8 @@
 {
     @Html.AntiForgeryToken()
 
-    <div class="rounded bg-light p-5">
-        <h4>登入</h4>
+    <div class="form-horizontal">
+        <h4>VMLogin</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -31,17 +31,20 @@
         </div>
 
         <div class="form-group">
-            <div class="col-md">
-                <input type="submit" value="登入" class="btn btn-success border border-dark" />
-                <input id="Reset1" type="reset" value="清除" class="btn btn-light border border-dark" />
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="登入(ﾟ∀。)" class="btn btn-default border border-dark" />
+                <input id="Reset1" type="reset" value="清除(›´ω`‹ )" class="btn btn-light border border-dark" />
             </div>
         </div>
-        <div class="col-md">
+        <div>
             <p class="text-danger">@ViewBag.ErrMsg</p>
         </div>
     </div>
 }
-@section scrips{
+@section scripts{
     <script src="~/Scripts/jquery.validate.min.js"></script>
-    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.bootstrap.min.js"></script>
 }
+<div>
+    @Html.ActionLink("回到列表", "Index")
+</div>

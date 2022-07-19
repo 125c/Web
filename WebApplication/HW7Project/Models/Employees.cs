@@ -33,25 +33,26 @@ namespace HW7Project.Models
         [DisplayName("密碼")]
         [DataType(DataType.Password)]
         public String Password
-        {
-            get
-            {
-                return password;
-            }
-            set
-            {
-                byte[] hashValue;
-                string result = "";
-                System.Text.UnicodeEncoding ue = new System.Text.UnicodeEncoding();
-                byte[] pwBytes = ue.GetBytes(value);
-                SHA256 shHash = SHA256.Create();
-                hashValue = shHash.ComputeHash(pwBytes);
-                foreach (byte b in hashValue)
-                {
-                    result += b.ToString();
-                }
-                password = result;
-            }
-        }
+        { get; set; }
+        //{
+        //    get
+        //    {
+        //        return password;
+        //    }
+        //    set
+        //    {
+        //        byte[] hashValue;
+        //        string result = "";
+        //        System.Text.UnicodeEncoding ue = new System.Text.UnicodeEncoding();
+        //        byte[] pwBytes = ue.GetBytes(value);
+        //        SHA256 shHash = SHA256.Create();
+        //        hashValue = shHash.ComputeHash(pwBytes);
+        //        foreach (byte b in hashValue)
+        //        {
+        //            result += b.ToString();
+        //        }
+        //        password = result;
+        //    }
+        //}
     }
 }
