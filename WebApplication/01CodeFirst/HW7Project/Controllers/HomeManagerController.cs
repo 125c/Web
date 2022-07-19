@@ -47,6 +47,7 @@ namespace HW7Project.Controllers
         {
 
             Session["user"] = null;
+
             return RedirectToAction("Index", "Home");
         }
     }

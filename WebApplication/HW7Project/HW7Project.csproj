@@ -268,6 +268,7 @@
     <Compile Include="Models\Products.cs" />
     <Compile Include="Models\Shippers.cs" />
     <Compile Include="Models\VMEmplloyee.cs" />
+    <Compile Include="Models\VMLogin.cs" />
     <Compile Include="Models\VMMember.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

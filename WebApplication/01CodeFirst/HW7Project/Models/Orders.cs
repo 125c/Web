@@ -37,10 +37,10 @@ namespace HW7Project.Models
         public Nullable<DateTime> ShippedDate { get; set; }
 
         //Forign Key
-        public int ShipID { get; set; }
-        public int PayTypeID { get; set; }
-        public int EmployeeID { get; set; }
-        public int MemberID { get; set; }
+        //public int ShipID { get; set; }
+        //public int PayTypeID { get; set; }
+        //public int EmployeeID { get; set; }
+        //public int MemberID { get; set; }
 
 
         //拉關聯

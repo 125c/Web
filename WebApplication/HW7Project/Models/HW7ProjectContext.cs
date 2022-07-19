@@ -18,8 +18,8 @@ namespace HW7Project.Models
         public DbSet<Shippers> Shippers { get; set; }
         public DbSet<Products> Products { get; set; }
 
-        public System.Data.Entity.DbSet<HW7Project.Models.VMMember> VMMembers { get; set; }
+        //public System.Data.Entity.DbSet<HW7Project.Models.VMMember> VMMembers { get; set; }
 
-        public System.Data.Entity.DbSet<HW7Project.Models.VMEmplloyee> VMEmplloyees { get; set; }
+        //public System.Data.Entity.DbSet<HW7Project.Models.VMEmplloyee> VMEmplloyees { get; set; }
     }
 }
