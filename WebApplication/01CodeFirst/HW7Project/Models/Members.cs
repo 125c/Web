@@ -12,6 +12,7 @@ namespace HW7Project.Models
     {
 
         [Key]
+        [DisplayName("會員編號")]
         public int MemberID { get; set; }
 
         [DisplayName("姓名")]
@@ -25,10 +26,14 @@ namespace HW7Project.Models
 
         [DisplayName("生日")]
         [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
         public DateTime MemberBirthday { get; set; }
 
         [DisplayName("建立日期")]
         [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
         public DateTime CreatedDate { get; set; }
 
 
@@ -74,8 +79,8 @@ namespace HW7Project.Models
 
         }
 
-        [DisplayName("請再輸入一次密碼")]
-        public string PwdConfirm { get; set; }
+        //[DisplayName("請再輸入一次密碼")]
+        //public string PwdConfirm { get; set; }
 
 }
 }

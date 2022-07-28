@@ -22,7 +22,23 @@ namespace HW7Project.Models
                    CreatedDate=DateTime.Today,
                    Account="shaio",
                    Password= "12345678"
-                }
+                },
+                new Members
+                {
+                   MemberName="你等毀",
+                   MemberBirthday=Convert.ToDateTime("1981/7/2"),
+                   CreatedDate=DateTime.Today,
+                   Account="where",
+                   Password= "12345678"
+                },
+                new Members
+                {
+                   MemberName="羅君君",
+                   MemberBirthday=Convert.ToDateTime("1981/7/9"),
+                   CreatedDate=DateTime.Today,
+                   Account="gg123",
+                   Password= "12345678"
+                },
             };
 
 

@@ -1,63 +1,91 @@
 ﻿@model IEnumerable<HW7Project.Models.Members>
 
 @{
-    ViewBag.Title = "Index"; Layout = "~/Views/Shared/_Layout_Manager.cshtml";
+    ViewBag.Title = "Index"; 
+    Layout = "~/Views/Shared/_Layout_Manager.cshtml";
 }
 
-<h2>Index</h2>
+<h2>尊絕不凡會員資料</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
+<p class="text-right">
+    @Html.ActionLink("新增尊絕不凡會員", "Create", null, new { @class = "btn btn-primary" })
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.MemberName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MemberPhotoFile)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MemberBirthday)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CreatedDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Account)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Password)
-        </th>
-        <th></th>
-    </tr>
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MemberID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MemberName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MemberBirthday)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedDate)
+            </th>
+            <th>資料管理</th>
+        </tr>
+    </thead>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.MemberName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MemberPhotoFile)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MemberBirthday)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreatedDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Account)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Password)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MemberID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MemberID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MemberID })
-        </td>
-    </tr>
-}
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MemberID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MemberName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MemberBirthday)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedDate)
+            </td>
+
+            <td>
+                @Html.ActionLink("編輯", "Edit", new { id = item.MemberID }, new { @class = "btn btn-info btn-sm" })
+                @*@Html.ActionLink("明細", "Details", new { id = item.MemberID }, new { @class = "btn btn-success btn-sm" })*@
+                @*@Html.ActionLink("慢走不送", "Delete", new { id = item.MemberID })*@
+                <button type="button" title="@item.MemberID" class="btn btn-success btn-sm btnDetail" data-toggle="modal" data-target="#exampleModal">
+                    詳細
+                </button>
+
+            </td>
+        </tr>
+    }
 
 </table>
+<!-- Button trigger modal -->
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="exampleModalLabel">詳細資料～</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                @*<button type="button" class="btn btn-primary">Save changes</button>*@
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts
+    {
+    <script>
+        $('.btnDetail').click(function (evt) {
+            $('#exampleModal .modal-body').load("/Members/Details/" + evt.target.title);
+        });
+
+    </script>
+    }

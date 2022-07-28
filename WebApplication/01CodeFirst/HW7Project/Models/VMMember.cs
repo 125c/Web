@@ -10,6 +10,7 @@ namespace HW7Project.Models
     public class VMMember
     {
         [Key]
+        [DisplayName("會員哀低")]
         public int MemberID { get; set; }
 
         [DisplayName("姓名")]

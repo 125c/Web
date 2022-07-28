@@ -1,0 +1,26 @@
+﻿@using System.Data
+@model System.Data.DataTable
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>社畜</h2>
+
+<div class="row">
+    @foreach (DataRow row in Model.Rows)
+    {
+        <div class="col-md-4">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h2>@row["姓名"]</h2>
+                </div>
+                <div class="panel-body">
+                    <h3>@row["身份證字號"]</h3>
+                    <h3>@row["城市"]</h3>
+                    <h3>@row["街道"]</h3>
+                    <h3>@row["電話"]</h3>
+                </div>
+            </div>
+        </div>
+    }
+</div>

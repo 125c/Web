@@ -10,7 +10,7 @@ using HW7Project.Models;
 
 namespace HW7Project.Controllers
 {
-    [LoginCheck]
+    //[LoginCheck]
     public class MembersController : Controller
     {
         private HW7ProjectContext db = new HW7ProjectContext();
@@ -34,7 +34,7 @@ namespace HW7Project.Controllers
             {
                 return HttpNotFound();
             }
-            return View(members);
+            return PartialView(members);
         }
 
         // GET: Members/Create
@@ -49,7 +49,7 @@ namespace HW7Project.Controllers
         // 如需詳細資料，請參閱 https://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MemberID,MemberName,MemberPhotoFile,MemberBirthday,CreatedDate,Account,Password")] Members members)
+        public ActionResult Create([Bind(Include = "MemberName,MemberBirthday")] Members members)
         {
             if (ModelState.IsValid)
             {

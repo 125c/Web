@@ -10,7 +10,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Members</h4>
         <hr />
@@ -28,16 +28,20 @@
         <div class="form-group">
             @Html.LabelFor(model => model.MemberPhotoFile, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.MemberPhotoFile, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.MemberPhotoFile, "", new { @class = "text-danger" })
+                @*@Html.EditorFor(model => model.MemberPhotoFile, new { htmlAttributes = new { @class = "form-control",@readonly } })*@
+                @*@Html.ValidationMessageFor(model => model.MemberPhotoFile, "", new { @class = "text-danger" })*@
+                @{
+                    var photo = Model.MemberPhotoFile == null ? "defaultPhoto.png" : Model.MemberPhotoFile;
+                 }
+                <img src="~/MemberPhoto/defaultPhoto.png" class="img-thumbnail" width="300"/>
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.MemberBirdthday, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.MemberBirthday, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.MemberBirdthday, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.MemberBirdthday, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.MemberBirthday, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MemberBirthday, "", new { @class = "text-danger" })
             </div>
         </div>
 
