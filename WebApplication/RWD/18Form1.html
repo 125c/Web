@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+<body>
+    <form class="mt-2 rounded bg-light pt-3 pb-3">
+        <div class="container">
+
+            <div class="form-group">
+                <label for="account">E-mail</label>
+                <input id="account" type="email" class="form-control" placeholder="Input Your Account...." />
+            </div>
+            <div class="form-group">
+                <label for="Password">Password</label>
+                <input id="Password" type="password" class="form-control" />
+            </div>
+            <div class="custom-control custom-switch">
+                <input id="remember" type="checkbox" class="custom-control-input" />
+                <label for="remember" class="custom-control-label">記住我</label>
+
+            </div>
+            <input id="Button1" type="button" value="Login" class="btn btn-primary mt-2" />
+
+
+        </div>
+    </form>
+
+
+    <hr />
+    <div class="container">
+        <form>
+            <fieldset>
+                <legend>加入會員</legend>
+                <div class="form-row">
+                    <div class="form-group col-lg-6">
+                        <label for="account">帳號:</label>
+                        <input id="account" type="text" class="form-control" placeholder="Enter Your Account..." required />
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <label for="password">密碼:</label>
+                        <input id="password" type="password" class="form-control" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="addr">地址:</label>
+                    <input id="addr" type="text" class="form-control" required />
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-lg-5">
+                        <label for="city">城市:</label>
+                        <input id="city" type="text" class="form-control" required />
+                    </div>
+
+                    <div class="form-group col-lg-7">
+                        <label for="state">區域:</label>
+                        <select id="state" class="form-control">
+                            <option>請選擇</option>
+                            <option>前鎮區</option>
+                            <option>小港區</option>
+                            <option>苓雅區</option>
+                            <option>三民區</option>
+
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="note">備註:</label>
+                    <textarea id="note" rows="5" cols="30" class="form-control"></textarea>
+                </div>
+                <div class="form-group form-check">
+                    <input id="agree" type="checkbox" class="form-check-input" />
+                    <label for="agree" class="form-check-label">我同意上述條款</label>
+                </div>
+                <input id="Submit1" type="submit" value="送出" class="btn btn-success btn-block" />
+            </fieldset>
+        </form>
+
+
+</body>
+</html>

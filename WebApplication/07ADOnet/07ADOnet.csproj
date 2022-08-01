@@ -50,6 +50,7 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -161,6 +162,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Views\Course\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -173,6 +175,7 @@
     <Compile Include="class.cs">
       <DependentUpon>school.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="courseDetails_Result.cs">
@@ -224,6 +227,7 @@
     <Compile Include="Models\program.cs">
       <DependentUpon>教務系統.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SetData.cs" />
     <Compile Include="Models\student.cs">
       <DependentUpon>教務系統.tt</DependentUpon>
     </Compile>

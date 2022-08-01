@@ -80,9 +80,12 @@
     <Content Include="12Utilities-Text.html" />
     <Content Include="13Utilities-Text2.html" />
     <Content Include="14.html" />
+    <Content Include="14Content-img.html" />
     <Content Include="15Content-table.html" />
     <Content Include="1653323814602.jpg" />
     <Content Include="16RWD_API.html" />
+    <Content Include="17Card.html" />
+    <Content Include="18Form.html" />
     <Content Include="a471.jpg" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
@@ -156,6 +159,7 @@
     <Content Include="bin\roslyn\vbc.rsp" />
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
     <Content Include="bin\RWD.dll.config" />
+    <Content Include="Scripts\17.html" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />

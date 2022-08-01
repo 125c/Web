@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>新增課程</h2>
+<form action="@Url.Action("Create")" method="post">
+    編號:<input id="cid" type="text" name="cid"/>
+    名稱:<input id="cname" type="text" name="cname"/>
+    學分:<input id="credit" type="text" name="credit"/>
+    <input id="Submit1" type="submit" value="新增" />
+</form>
+

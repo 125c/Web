@@ -55,11 +55,14 @@ namespace _07ADOnet.Models
 
 
 
-        public DataTable querySql(string sql, CommandType cmt,string id, string name)
+        public DataTable querySql(string sql, CommandType cmt,List<SqlParameter> para)
         {
-            adp.SelectCommand.Parameters.AddWithValue("@id", id);
-            adp.SelectCommand.Parameters.AddWithValue("@name", name);
-         
+            //adp.SelectCommand.Parameters.AddWithValue("@id", id);
+            //adp.SelectCommand.Parameters.AddWithValue("@name", name);
+            foreach (SqlParameter p in para) 
+            {
+                adp.SelectCommand.Parameters.Add(p);
+            }
 
             adp.SelectCommand.CommandType = cmt;
             adp.SelectCommand.CommandText = sql;
