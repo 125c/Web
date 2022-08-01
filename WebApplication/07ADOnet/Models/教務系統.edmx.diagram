@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="213a6bfb093e41af96941bb32a16594f" Name="Diagram1">
+        <EntityTypeShape EntityType="教務系統Model.class" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="教務系統Model.emp" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="教務系統Model.professor" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="教務系統Model.program" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="教務系統Model.student" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="教務系統Model.主管" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="教務系統Model.客戶" Width="1.5" PointX="5.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="教務系統Model.新客戶" Width="1.5" PointX="5.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="教務系統Model.客戶業績" Width="1.5" PointX="8" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="教務系統Model.FK__班級__教授編號__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="教務系統Model.FK__班級__課程編號__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="教務系統Model.FK__班級__學號__2C3393D0" ManuallyRouted="false" />
+        <AssociationConnector Association="教務系統Model.FK__教授__身份證字號__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="教務系統Model.FK__客戶業績__客戶編號__3B75D760" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

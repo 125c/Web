@@ -250,6 +250,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HomeManagerController.cs" />
     <Compile Include="Controllers\LoginCheck.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MembersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -282,6 +283,7 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\HomeManager\Login.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

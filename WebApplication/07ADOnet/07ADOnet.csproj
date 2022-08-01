@@ -96,10 +96,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\dbEmployee.mdf" />
-    <Content Include="App_Data\dbEmployee_log.ldf">
-      <DependentUpon>dbEmployee.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -107,6 +103,25 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Models\教務系統.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>教務系統.edmx</DependentUpon>
+      <LastGenOutput>教務系統.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\教務系統.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>教務系統.edmx</DependentUpon>
+      <LastGenOutput>教務系統.cs</LastGenOutput>
+    </Content>
+    <Content Include="obj\Debug\07ADOnet.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\07ADOnet.dll" />
+    <Content Include="obj\Debug\07ADOnet.pdb" />
+    <Content Include="obj\Debug\TempPE\Models.school.Context1.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Models.school1.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Models.school1.Designer.cs.dll" />
+    <Content Include="obj\Debug\TempPE\school.Context.cs.dll" />
+    <Content Include="obj\Debug\TempPE\school.cs.dll" />
+    <Content Include="obj\Debug\TempPE\school.Designer.cs.dll" />
     <Content Include="school.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>school.Context.cs</LastGenOutput>
@@ -125,12 +140,33 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Web.config" />
+    <Content Include="obj\Debug\07ADOnet.csproj.AssemblyReference.cache" />
+    <Content Include="obj\Debug\07ADOnet.csproj.CopyComplete" />
+    <Content Include="obj\Debug\07ADOnet.csproj.CoreCompileInputs.cache" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\edmxResourcesToEmbed\school.csdl" />
+    <Content Include="obj\Debug\edmxResourcesToEmbed\school.msl" />
+    <Content Include="obj\Debug\edmxResourcesToEmbed\school.ssdl" />
+    <EntityDeploy Include="Models\教務系統.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>教務系統.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\教務系統.edmx.diagram">
+      <DependentUpon>教務系統.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
-    <Content Include="Web.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -138,6 +174,7 @@
       <DependentUpon>school.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="courseDetails_Result.cs">
       <DependentUpon>school.tt</DependentUpon>
     </Compile>
@@ -159,7 +196,65 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\class.cs">
+      <DependentUpon>教務系統.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\courseDetails_Result.cs">
+      <DependentUpon>教務系統.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\emp.cs">
+      <DependentUpon>教務系統.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\empDataRow_Result.cs">
+      <DependentUpon>教務系統.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnOffsetFetchNext_Result.cs">
+      <DependentUpon>教務系統.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnStudentCourseQuery2_Result.cs">
+      <DependentUpon>教務系統.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnStudentCourseQuery_Result.cs">
+      <DependentUpon>教務系統.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\GetData.cs" />
+    <Compile Include="Models\professor.cs">
+      <DependentUpon>教務系統.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\program.cs">
+      <DependentUpon>教務系統.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\student.cs">
+      <DependentUpon>教務系統.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\主管.cs">
+      <DependentUpon>教務系統.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\客戶.cs">
+      <DependentUpon>教務系統.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\客戶業績.cs">
+      <DependentUpon>教務系統.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\教務系統.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>教務系統.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\教務系統.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>教務系統.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\教務系統.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>教務系統.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\新客戶.cs">
+      <DependentUpon>教務系統.tt</DependentUpon>
+    </Compile>
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
     <Compile Include="professor.cs">
       <DependentUpon>school.tt</DependentUpon>
     </Compile>
@@ -214,14 +309,11 @@
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Views\Home\GetEmployee.cshtml" />
     <Content Include="Views\Home\GetCursePivot.cshtml" />
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
+    <Content Include="Views\Login\Login.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Data;
@@ -12,34 +13,28 @@ namespace _07ADOnet.Controllers
 {
     public class HomeController : Controller
     {
-        //教務系統Entities db = new 教務系統Entities();
-        //static  SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["aaa"].ConnectionString);
-        //SqlDataAdapter adp = new SqlDataAdapter("", conn);
-        //DataSet ds=new DataSet();
-        //DataTable dt = new DataTable();
+
         GetData gd = new GetData();
+
         public ActionResult Index()
         {
+            var student = gd.querySql("select * from student", CommandType.Text);
 
-            //SqlDataAdapter adp=new SqlDataAdapter("select * from student",conn);
-            //adp.Fill(ds, "studnets");
-            //dt = ds.Tables["studnets"];
-            ////ViewBag.DataSource = dt;
-            //return View(dt);
-            return View(gd.querySql("select * from student"));
+            return View(student);
         }
+
         public ActionResult GetEmployee()
         {
-            //SqlDataAdapter adp = new SqlDataAdapter("select * from emp", conn);
-            //adp.Fill(ds, "studnets");
-            //dt = ds.Tables["studnets"];
-            //return View(dt);
-            //var student=gd.!!!!
-            return View(gd.querySql("select * from emp"));
+
+            return View(gd.querySql("select * from emp", CommandType.Text,"employee"));
         }
-        public ActionResult GetCursePivot()
+
+
+        public ActionResult GetCoursePivot()
         {
-            return View(gd.querySqlBySP("getCoursePivot"));
+
+            var result = gd.querySql("getCoursePivot", CommandType.StoredProcedure);
+            return View(result);
         }
     }
 }
