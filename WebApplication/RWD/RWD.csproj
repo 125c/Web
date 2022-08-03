@@ -77,6 +77,7 @@
     <Content Include="06GridSystemForPhone.html" />
     <Content Include="05GridSystemForPad.html" />
     <Content Include="04GridSystemForDesktop.html" />
+    <Content Include="11Utilities-Color.html" />
     <Content Include="12Utilities-Text.html" />
     <Content Include="13Utilities-Text2.html" />
     <Content Include="14Content-img.html" />
@@ -89,6 +90,8 @@
     <Content Include="19Form-Validator.html" />
     <Content Include="20Alert.html" />
     <Content Include="20Alert1.html" />
+    <Content Include="21Badge.html" />
+    <Content Include="21Badge1.html" />
     <Content Include="a471.jpg" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
