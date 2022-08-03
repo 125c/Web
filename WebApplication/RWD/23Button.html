@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/MyStyle.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="container">
+        <button type="button" class="btn btn-primary">Primary</button>
+        <button type="button" class="btn btn-secondary">Secondary</button>
+        <button type="button" class="btn btn-success">Success</button>
+        <button type="button" class="btn btn-danger">Danger</button>
+        <button type="button" class="btn btn-warning">Warning</button>
+        <button type="button" class="btn btn-info">Info</button>
+        <button type="button" class="btn btn-light">Light</button>
+        <button type="button" class="btn btn-dark">Dark</button>
+
+        <button type="button" class="btn btn-link">Link</button>
+        <hr />
+        <button type="button" class="btn btn-primary" data-toggle="button">
+            Single toggle
+        </button>
+
+        <div class="btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-secondary active">
+                <input type="checkbox" checked> Checked
+            </label>
+        </div>
+
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-secondary active">
+                <input type="radio" name="options" id="option1" checked> Active
+            </label>
+            <label class="btn btn-secondary">
+                <input type="radio" name="options" id="option2"> Radio
+            </label>
+            <label class="btn btn-secondary">
+                <input type="radio" name="options" id="option3"> Radio
+            </label>
+        </div>
+        <hr />
+        <div class="custom-control custom-switch">
+            <input id="remember" type="checkbox" class="custom-control-input" />
+            <label for="remember" class="custom-control-label">記住我</label>
+
+        </div>
+    </div>
+    <script src="Scripts/jquery-3.0.0.min.js"></script>
+    <script src="Scripts/bootstrap.bundle.min.js"></script>
+</body>
+</html>
