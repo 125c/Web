@@ -92,6 +92,7 @@
     <Content Include="20Alert1.html" />
     <Content Include="21Badge.html" />
     <Content Include="21Badge1.html" />
+    <Content Include="22breadcrumb1.html" />
     <Content Include="a471.jpg" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />

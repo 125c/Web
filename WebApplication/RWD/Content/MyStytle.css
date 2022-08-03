@@ -15,3 +15,7 @@ caption {
 img:hover {
     box-shadow:1px 1px 1px #ff0000;
 }
+.breadcrumb-item + .breadcrumb-item::before {
+    color: #6c757d;
+    content: "→";
+}
