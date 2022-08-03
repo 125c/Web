@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="alert alert-light p-5 mt-3 shadow-sm" role="alert">
+            <h1 class="alert-heading">Bootstrap</h1>
+            <p>A framework for Responsive web desgn.</p>
+            <hr>
+            <button class="btn btn-warning">Learn more...</button>
+        </div>
+
+
+        <div class="alert alert-danger">
+            您現在是最高權限管理員,使用完後請馬上登出!!
+        </div>
+        <div class="alert alert-primary">
+            您現在是最高權限管理員,使用完後請馬上登出!!
+        </div>
+        <div class="alert alert-warning">
+            您現在是最高權限管理員,使用完後請馬上登出!!
+        </div>
+        <div class="alert alert-info">
+            您現在是最高權限管理員,使用完後請馬上登出!!
+        </div>
+        <div class="alert alert-success">
+            您現在是最高權限管理員,使用完後請馬上登出!!
+        </div>
+        <div class="alert alert-warning alert-dismissible fade show" id="myAlert">
+            <strong>您現在是最高權限管理員</strong> 使用完後請馬上登出!!
+            <button type="button" class="close" data-dismiss="alert">
+                <span>&times;</span>
+            </button>
+        </div>
+
+        &times;
+    </div>
+
+    <script src="Scripts/jquery-3.0.0.min.js"></script>
+    <script src="Scripts/bootstrap.bundle.min.js"></script>
+    <script>
+        $('#myAlert').on('close.bs.alert', function () {
+            alert('使用完一定要記得登出哦~~~~~!!')
+        })
+    </script>
+</body>
+</html>

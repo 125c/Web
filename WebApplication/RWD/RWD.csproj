@@ -79,13 +79,16 @@
     <Content Include="04GridSystemForDesktop.html" />
     <Content Include="12Utilities-Text.html" />
     <Content Include="13Utilities-Text2.html" />
-    <Content Include="14.html" />
     <Content Include="14Content-img.html" />
     <Content Include="15Content-table.html" />
     <Content Include="1653323814602.jpg" />
     <Content Include="16RWD_API.html" />
     <Content Include="17Card.html" />
     <Content Include="18Form.html" />
+    <Content Include="18Form1.html" />
+    <Content Include="19Form-Validator.html" />
+    <Content Include="20Alert.html" />
+    <Content Include="20Alert1.html" />
     <Content Include="a471.jpg" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
