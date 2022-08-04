@@ -96,6 +96,9 @@
     <Content Include="39jQuery - DOM - 複製 %282%29.html" />
     <Content Include="40API.html" />
     <Content Include="39jQuery - DOM - 複製.html" />
+    <Content Include="40jQuery_API.html" />
+    <Content Include="41jQuery_Animate.html" />
+    <Content Include="42jQuery_Event.html" />
     <Content Include="HW4.html" />
     <Content Include="38jQuery.html" />
     <Content Include="HW2.html" />
@@ -105,6 +108,7 @@
     <Content Include="HW1.html" />
     <Content Include="HW3.html" />
     <Content Include="HW3.js" />
+    <Content Include="HW5Front.html" />
     <Content Include="images2\Koala.jpg" />
     <Content Include="images2\Lighthouse.jpg" />
     <Content Include="images\10image2.html" />
