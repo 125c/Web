@@ -99,6 +99,7 @@
     <Content Include="40jQuery_API.html" />
     <Content Include="41jQuery_Animate.html" />
     <Content Include="42jQuery_Event.html" />
+    <Content Include="fonts\webdings.svg" />
     <Content Include="HW4.html" />
     <Content Include="38jQuery.html" />
     <Content Include="HW2.html" />
@@ -109,6 +110,7 @@
     <Content Include="HW3.html" />
     <Content Include="HW3.js" />
     <Content Include="HW5Front.html" />
+    <Content Include="HW5how.html" />
     <Content Include="images2\Koala.jpg" />
     <Content Include="images2\Lighthouse.jpg" />
     <Content Include="images\10image2.html" />
@@ -119,6 +121,10 @@
     <Content Include="images\Jellyfish.jpg" />
     <Content Include="images\Penguins.jpg" />
     <Content Include="images\Tulips.jpg" />
+    <Content Include="fonts\webdings.eot" />
+    <Content Include="fonts\webdings.ttf" />
+    <Content Include="fonts\webdings.woff" />
+    <Content Include="fonts\webdings.woff2" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />

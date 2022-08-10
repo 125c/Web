@@ -97,6 +97,7 @@
     <Content Include="23Button.html" />
     <Content Include="23Buttons1.html" />
     <Content Include="24DropDown.html" />
+    <Content Include="25Nav.html" />
     <Content Include="a471.jpg" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />

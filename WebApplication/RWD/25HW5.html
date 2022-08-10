@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/MyStyle.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="container" id="container">
+
+        <h1 class="text-center bg-success text-white pt-3 pb-3 mt-3 mb-3 rounded shadow">
+            <strong>全國農業旅遊休閒園區</strong>
+        </h1>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="showDetail" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">詳細資料</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="Scripts/jquery-3.0.0.min.js"></script>
+    <script src="Scripts/bootstrap.bundle.min.js"></script>
+    <script>
+
+        var item = "";
+        $.ajax({
+            type: 'get',
+            url: 'https://data.coa.gov.tw/Service/OpenData/ODwsv/ODwsvAttractions.aspx',
+            success: function (data) {
+                console.log(data);
+                item = `<div class="row">`;
+                for (var i = 0; i < data.length; i++) {
+                    item += `<div class="mt-2 col-lg-4 card border-success">
+                                        <img src="${data[i].Photo}" class="img-thumbnail" />
+                                        <div class="card-body">
+                                            <h4 class="text-center text-primary"> ${data[i].Name} </h4>
+
+                                             <h5 class="text-center">
+                                                ${data[i].City} ${data[i].Town}
+                                             </h5>
+                                         </div >
+                                        <div class="card-footer">
+                                   <button class="btn btn-success btn-block" data-toggle="modal" data-target="#showDetail" id="${data[i].ID}" onclick="showDetailData(event)">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-square" viewBox="0 0 16 16">
+                                          <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                                          <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+                                        </svg>
+                                        詳細資料</button>
+                                         </div >
+                                    </div>`;
+
+                }
+                item += `</div>`;
+                $('#container').append(item);
+            },
+            error: function () {
+                alert('error');
+            }
+        });
+
+
+        function showDetailData(evt) {
+            var id = evt.target.id;
+            var skip = id - 100;
+            var detailItem = "";
+            console.log(id);
+            $.ajax({
+                type: 'get',
+                url: 'https://data.coa.gov.tw/Service/OpenData/ODwsv/ODwsvAttractions.aspx?$skip=' + skip+'&$top=1',
+
+                success: function (data) {
+                    console.log(data);
+                    
+                    for (var i = 0; i < data.length; i++) {
+                       
+                            detailItem = `<div class="mt-2 card border-success">
+                            <div class="row">
+                                <div class="col-6">
+                                        <img src="${data[i].Photo}" class="img-thumbnail" />
+                                    </div>
+                                <div class="col-6">
+                                        <div class="card-body">
+                                            <h4 class="text-center text-primary"> ${data[i].Name} </h4>
+                                             <h5 class="text-center">
+                                                ${data[i].City} ${data[i].Town}
+                                             </h5>
+                                        <p> <a href="https://www.google.com.tw/maps/search/${data[i].Address}" target="_blank" class="btn btn-outline-danger btn-block mb-2">地圖</a></p>
+                                        </div >
+                                </div>
+                             </div>
+                            <div class="row">
+                                <p class="col-12 p-4">
+                                ${data[i].Introduction}
+                            </p>
+                          
+                            </div>
+                         </div>`;
+                       
+                    }
+
+                    $('#showDetail .modal-body').html(detailItem);
+
+                },
+                error: function () {
+                    alert('error');
+                }
+            });
+
+
+
+        }
+
+
+
+    </script>
+</body>
+</html>
