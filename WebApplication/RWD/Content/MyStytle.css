@@ -27,3 +27,10 @@ img:hover {
 .text-shadow {
     text-shadow: 2px 2px 3px black;
 }
+.modal-dialog {
+    background-color:red;
+}
+.modal-content {
+    background-repeat: round;
+    background-image: url('../capoo.png');
+}
