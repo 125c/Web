@@ -106,6 +106,7 @@
     <Content Include="30MediaObject.html" />
     <Content Include="31Carousel.html" />
     <Content Include="32Modal.html" />
+    <Content Include="RWD_Homework.html" />
     <Content Include="33Navbar.html" />
     <Content Include="a471.jpg" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
@@ -160,6 +161,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="03GridSystem.html" />
+    <Content Include="Content\MyStyle.css" />
     <Content Include="Content\MyStytle.css" />
     <Content Include="obj\Debug\RWD.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\RWD.dll" />
