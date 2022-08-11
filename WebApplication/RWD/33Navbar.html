@@ -1,0 +1,243 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/MyStytle.css" rel="stylesheet" />
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info">
+        <div class="container">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" data-target="#PricingDropdown">
+                         Pricing
+                        </a>
+                        <div class="dropdown-menu" id="PricingDropdown">
+                            <a class="dropdown-item" href="#">aaa</a>
+                            <a class="dropdown-item" href="#">bbb</a>
+                            <a class="dropdown-item" href="#">ccc</a>
+                            <a class="dropdown-item" href="#">ddd</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">Disabled</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0" action="https://www.google.com/search">
+                    <input id="Text1" type="text" name="q" placeholder="Search..." class="form-control mr-sm-2" />
+                    <input id="Submit1" type="submit" value="Search" class="btn btn-light my-2 my-sm-0" />
+                </form>
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div class="modal fade" id="loginModal">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="email">E-mail:</label>
+                            <input id="email" name="email" type="text" class="form-control" placeholder="Enter Your E-mail..." />
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd">Password:</label>
+                            <input id="pwd" name="pwd" type="password" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-success">Login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="text-right">
+            <button class="btn btn-link" data-toggle="modal" data-target="#loginModal">登入系統</button> | <button class="btn btn-link">寫信給我</button>
+        </div>
+        <div class="jumbotron text-white">
+            <h1 class="display-4 text-shadow "><strong>世界那麼大 我想去看看</strong></h1>
+            <h3 class="text-shadow">錢包那麼小 是能看三小</h3>
+            <hr>
+            <h5 class="bg-light text-dark p-2 rounded">本公司還有更豐富多元的旅遊行程，請點選了解更多按鈕進入查看</h5>
+            <a class="btn btn-warning btn-lg" href="#">了解更多</a>
+        </div>
+        <div class="media">
+            <img src="photo/01.jpg" class="mr-3" width="180" />
+            <div class="media-body">
+                <h4 class="mt-0"><strong>瑪雅文化遺跡</strong></h4>
+                <p>民進黨桃園市長參選人林智堅因論文抄襲，學位被台灣大學撤銷，多人點名林智堅當時的指導教授、國安局長陳明通也有責任。台北市議員王鴻薇今天表示，教育部已經收到她檢舉陳明通的檢舉函了，「抄襲事證確鑿，不能放過這些學術詐騙集團」。</p>
+            </div>
+        </div>
+        <div class="media">
+
+            <div class="media-body">
+                <h4 class="mt-0 text-right"><strong>吳哥窟</strong></h4>
+                <p>民進黨桃園市長參選人林智堅因論文抄襲，學位被台灣大學撤銷，多人點名林智堅當時的指導教授、國安局長陳明通也有責任。台北市議員王鴻薇今天表示，教育部已經收到她檢舉陳明通的檢舉函了，「抄襲事證確鑿，不能放過這些學術詐騙集團」。</p>
+            </div>
+            <img src="photo/02.jpg" class="ml-3" width="180" />
+        </div>
+        <div class="media">
+            <img src="photo/03.jpg" class="mr-3" width="180" />
+            <div class="media-body">
+                <h4 class="mt-0"><strong>下龍灣</strong></h4>
+                <p>民進黨桃園市長參選人林智堅因論文抄襲，學位被台灣大學撤銷，多人點名林智堅當時的指導教授、國安局長陳明通也有責任。台北市議員王鴻薇今天表示，教育部已經收到她檢舉陳明通的檢舉函了，「抄襲事證確鑿，不能放過這些學術詐騙集團」。</p>
+            </div>
+        </div>
+        <div class="media">
+            <div class="media-body">
+                <h4 class="mt-0 mb-1 text-right"><strong>埃及金字塔</strong></h4>
+                <p>民進黨桃園市長參選人林智堅因論文抄襲，學位被台灣大學撤銷，多人點名林智堅當時的指導教授、國安局長陳明通也有責任。台北市議員王鴻薇今天表示，教育部已經收到她檢舉陳明通的檢舉函了，「抄襲事證確鑿，不能放過這些學術詐騙集團」。</p>
+            </div>
+            <img src="photo/04.jpg" class="ml-3" width="180" />
+        </div>
+        <div class="media">
+            <img src="photo/05.jpg" class="mr-3" width="180" />
+            <div class="media-body">
+                <h4 class="mt-0"><strong>聖伯多祿大殿</strong></h4>
+                <p>民進黨桃園市長參選人林智堅因論文抄襲，學位被台灣大學撤銷，多人點名林智堅當時的指導教授、國安局長陳明通也有責任。台北市議員王鴻薇今天表示，教育部已經收到她檢舉陳明通的檢舉函了，「抄襲事證確鑿，不能放過這些學術詐騙集團」。</p>
+            </div>
+        </div>
+        <div class="media">
+
+            <div class="media-body">
+                <h4 class="mt-0 text-right"><strong>台北101</strong></h4>
+                <p>民進黨桃園市長參選人林智堅因論文抄襲，學位被台灣大學撤銷，多人點名林智堅當時的指導教授、國安局長陳明通也有責任。台北市議員王鴻薇今天表示，教育部已經收到她檢舉陳明通的檢舉函了，「抄襲事證確鑿，不能放過這些學術詐騙集團」。</p>
+            </div>
+            <img src="photo/06.jpg" class="ml-3" width="180" />
+        </div>
+        <div class="media">
+            <img src="photo/07.jpg" class="mr-3" width="180" />
+            <div class="media-body">
+                <h4 class="mt-0"><strong>尼加拉瀑布</strong></h4>
+                <p>民進黨桃園市長參選人林智堅因論文抄襲，學位被台灣大學撤銷，多人點名林智堅當時的指導教授、國安局長陳明通也有責任。台北市議員王鴻薇今天表示，教育部已經收到她檢舉陳明通的檢舉函了，「抄襲事證確鑿，不能放過這些學術詐騙集團」。</p>
+            </div>
+        </div>
+        <div class="media">
+            <div class="media-body">
+                <h4 class="mt-0 mb-1 text-right"><strong>雪梨歌劇院</strong></h4>
+                <p>民進黨桃園市長參選人林智堅因論文抄襲，學位被台灣大學撤銷，多人點名林智堅當時的指導教授、國安局長陳明通也有責任。台北市議員王鴻薇今天表示，教育部已經收到她檢舉陳明通的檢舉函了，「抄襲事證確鑿，不能放過這些學術詐騙集團」。</p>
+            </div>
+            <img src="photo/08.jpg" class="ml-3" width="180" />
+        </div>
+
+        <div id="carouselPhotos" class="carousel slide mt-4" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselPhotos" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselPhotos" data-slide-to="1"></li>
+                <li data-target="#carouselPhotos" data-slide-to="2"></li>
+                <li data-target="#carouselPhotos" data-slide-to="3"></li>
+                <li data-target="#carouselPhotos" data-slide-to="4"></li>
+                <li data-target="#carouselPhotos" data-slide-to="5"></li>
+                <li data-target="#carouselPhotos" data-slide-to="6"></li>
+                <li data-target="#carouselPhotos" data-slide-to="7"></li>
+
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="photo/11.jpg" class="d-block w-100" />
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>瑪雅文化遺跡</h5>
+                        <p>Some representative placeholder content for the first slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="photo/12.jpg" class="d-block w-100" />
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>吳哥窟</h5>
+                        <p>Some representative placeholder content for the second slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="photo/13.jpg" class="d-block w-100" />
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>下龍灣</h5>
+                        <p>Some representative placeholder content for the third slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="photo/14.jpg" class="d-block w-100" />
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>埃及金字塔</h5>
+                        <p>Some representative placeholder content for the first slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="photo/15.jpg" class="d-block w-100" />
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>聖伯多祿大殿</h5>
+                        <p>Some representative placeholder content for the second slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="photo/16.jpg" class="d-block w-100" />
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>台北101</h5>
+                        <p>Some representative placeholder content for the third slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="photo/17.jpg" class="d-block w-100" />
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>尼加拉瀑布</h5>
+                        <p>Some representative placeholder content for the second slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="photo/18.jpg" class="d-block w-100" />
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>雪梨歌劇院</h5>
+                        <p>Some representative placeholder content for the third slide.</p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="carousel-control-next" type="button" data-target="#carouselPhotos" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+                <span class="sr-only">Next</span>
+            </button>
+            <button class="carousel-control-prev" type="button" data-target="#carouselPhotos" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+                <span class="sr-only">Previous</span>
+            </button>
+        </div>
+
+    </div>
+
+    <script src="Scripts/jquery-3.6.0.min.js"></script>
+    <script src="Scripts/bootstrap.bundle.min.js"></script>
+    <script>
+        $('.carousel').carousel({
+            interval: 2000
+        })
+    </script>
+</body>
+</html>

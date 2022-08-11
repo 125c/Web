@@ -106,6 +106,7 @@
     <Content Include="30MediaObject.html" />
     <Content Include="31Carousel.html" />
     <Content Include="32Modal.html" />
+    <Content Include="33Navbar.html" />
     <Content Include="a471.jpg" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
