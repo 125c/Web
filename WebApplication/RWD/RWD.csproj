@@ -103,6 +103,7 @@
     <Content Include="27Collapse.html" />
     <Content Include="28Jumbotron.html" />
     <Content Include="29Jumbotron2.html" />
+    <Content Include="30MediaObject.html" />
     <Content Include="a471.jpg" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
@@ -193,8 +194,6 @@
     <Content Include="photo\16.jpg" />
     <Content Include="photo\17.jpg" />
     <Content Include="photo\18.jpg" />
-    <Content Include="Scripts\17.html" />
-    <Content Include="Scripts\22Buttons1.html" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
