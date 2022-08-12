@@ -1,15 +1,13 @@
 ﻿body {
-    
+    background-image: url('../photo/16592698290810.jpg');
+    background-repeat: round;
 }
 .jumbotron {
-    background-image: url('../photo/00.jpg');
-    background-repeat:round;
+    background-image: url('../photo/00.jpg');  
+    background-repeat: round;
 }
 .text-shadow {
     text-shadow: 2px 2px 3px black;
-}
-.modal-dialog {
-    background-color:red;
 }
 .modal-content {
     background-repeat: round;
