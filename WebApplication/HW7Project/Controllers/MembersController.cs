@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using HW7Project.Models;
+using PagedList;
 
 namespace HW7Project.Controllers
 {
@@ -15,9 +16,13 @@ namespace HW7Project.Controllers
         private HW7ProjectContext db = new HW7ProjectContext();
 
         // GET: Members
-        public ActionResult Index()
+        public ActionResult Index(int page=1)
         {
-            return View(db.Members.ToList());
+            var members = db.Members.ToList();
+            int pagesize = 5;
+            var PagedList = members.ToPagedList(page, pagesize);
+            //return View(db.Members.ToList());
+            return View(PagedList);
         }
 
         // GET: Members/Details/5
@@ -32,7 +37,7 @@ namespace HW7Project.Controllers
             {
                 return HttpNotFound();
             }
-            return View(members);
+            return PartialView(members);
         }
 
         // GET: Members/Create
@@ -46,16 +51,30 @@ namespace HW7Project.Controllers
         // 如需詳細資料，請參閱 https://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MemberId,MemberName,MemberPhotoFile,MemberBirthday,CreateDate,Account,Password")] Members members)
+        public ActionResult Create([Bind(Include = "MemberId,MemberName,MemberPhotoFile,MemberBirthday,CreateDate,Account,Password")] Members members,HttpPostedFileBase photo)
         {
+            //var account=db.Members.Where(m => m.Account == members.Account).FirstOrDefault();
+            //if (account!=null) {
+            //    ViewBag.Error = "帳號有人使用";
+            //    return View();
+            //}
+            if (photo!=null) 
+            {
+                if (photo.ContentLength>0)  
+                {
+                    photo.SaveAs(Server.MapPath("~/MemberPhotos/" + members.Account + ".jpg"));
+                }
+            }
+           
             if (ModelState.IsValid)
             {
+                members.MemberPhotoFile = members.Account + ".jpg";
                 db.Members.Add(members);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
-            return View(members);
+            return View();
+            //return View(members);
         }
 
         // GET: Members/Edit/5
@@ -78,11 +97,18 @@ namespace HW7Project.Controllers
         // 如需詳細資料，請參閱 https://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MemberId,MemberName,MemberPhotoFile,MemberBirthday,CreateDate,Account,Password")] Members members)
+        public ActionResult Edit(Members members)
         {
+            var member = db.Members.Find(members.MemberId);
+            member.MemberName = members.MemberName;
+            member.MemberBirthday= members.MemberBirthday;
+            member.MemberId=members.MemberId;
+            member.CreateDate=members.CreateDate;
+            member.Account=members.Account;
+            member.Password = members.Password;
             if (ModelState.IsValid)
             {
-                db.Entry(members).State = EntityState.Modified;
+                db.Entry(member).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

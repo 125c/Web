@@ -3,46 +3,45 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <title>@ViewBag.Title - 鍋具商城</title>
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.8.3.js"></script>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-expand-lg navbar-dark bg-info mb-3">
         <div class="container">
             @Html.ActionLink("杯具商城後台管理","Index","Home",new { area=""},new {@class="navbar-brand" })
-            <div class="navbar-header">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#MynavbarMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="MynavbarMenu">
+                <div class="navbar-nav">
+                    @Html.ActionLink("管理首頁", "Index", "HomeManager", new { area = "" }, new { @class = "navbar-link" })
+                    @Html.ActionLink("客戶管理", "Index", "Members", new { area = "" }, new { @class = "navbar-link" })
+                    @Html.ActionLink("商品首頁", "Index", "Products", new { area = "" }, new { @class = "navbar-link" })
+                    @Html.ActionLink("登出", "Logout", "HomeManager", new { area = "" }, new { @class = "navbar-link" })
+                </div>
                 @*<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>*@
-                @Html.ActionLink("管理首頁", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("客戶管理", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("商品首頁", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("登出", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                </ul>
             </div>
         </div>
     </div>
 
-    <div class="container body-content">
-        <section>
+    <section class="container">
             <div class="alert alert-danger text-center">管理員中！</div>
             @RenderBody()
-        </section>
-
         <hr />
         <footer class="bg-dark mt-5" >
-            <p class="text-white p-3">Cpoyright &copy; @DateTime.Now.Year -  杯具商城 All Rights Reserved.</p>
+            <p class="text-white text-center p-3">Cpoyright &copy; @DateTime.Now.Year -  杯具商城 All Rights Reserved.</p>
         </footer>
-    </div>
+    </section>
 
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+    @RenderSection("scripts",false)
 </body>
 </html>

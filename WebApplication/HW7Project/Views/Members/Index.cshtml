@@ -1,63 +1,100 @@
-﻿@model IEnumerable<HW7Project.Models.Members>
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<HW7Project.Models.Members>
+    @{
+        ViewBag.Title = "Index";
+        Layout = "~/Views/Shared/_Layout_Manager.cshtml";
+    }
 
-@{
-    ViewBag.Title = "Index";
-}
+    <h2>乾爹會員列表</h2>
 
-<h2>Index</h2>
+    <p class="text-right">
+        @Html.ActionLink("新增乾爹資料", "Create", null, new { @class = "btn btn-primary" })
+    </p>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>
+                    @*@Html.DisplayNameFor(model => model.MemberName)*@
+                    @Html.DisplayNameFor(model => model.FirstOrDefault().MemberId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstOrDefault().MemberName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstOrDefault().MemberPhotoFile)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstOrDefault().MemberBirthday)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstOrDefault().CreateDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstOrDefault().Account)
+                </th>
+                <th>資料管理？</th>
+            </tr>
+        </thead>
+        
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.MemberName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MemberPhotoFile)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MemberBirthday)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CreateDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Account)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Password)
-        </th>
-        <th></th>
-    </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MemberId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MemberName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MemberPhotoFile)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MemberBirthday)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreateDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Account)
+                </td>
+                <td>
+                    @Html.ActionLink("編輯", "Edit", new { id = item.MemberId }, new { @class = "btn btn-info btn-sm" })
+                    <button type="button" title="@item.MemberId" class="btn btn-success btn-sm btnDetail" data-toggle="modal" data-target="#exampleModal">
+                        詳細
+                    </button>
+                </td>
+            </tr>
+        }
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.MemberName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MemberPhotoFile)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MemberBirthday)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreateDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Account)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Password)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MemberId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MemberId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MemberId })
-        </td>
-    </tr>
-}
+    </table>
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">會員詳細資料</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
 
-</table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+@section scripts{
+    <script>
+        $('.pagination-container').addClass("d-flex justify-content-center");
+        $('.pagination-container>ul>li').removeClass().addClass("page-item");
+        $('.pagination-container a').addClass("page-link");
+        $('.btnDetail').click(function (evt) {
+            //console.log("/Members/Details/" + evt.target.title);
+            $('#exampleModal .modal-body').load("/Members/Details/" + evt.target.title);
+        });
+    </script>
+    }

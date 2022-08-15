@@ -26,7 +26,7 @@ namespace HW7Project.Models
         [Required(ErrorMessage = "請填寫生日")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
-        public DateTime MemberBirdhday { get; set; }
+        public DateTime MemberBirthday { get; set; }
 
         [DisplayName("建立日期")]
         [DataType(DataType.Date)]

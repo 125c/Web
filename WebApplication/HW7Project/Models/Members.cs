@@ -10,37 +10,42 @@ namespace HW7Project.Models
 {
     public class Members
     {
+        [DisplayName("會員編號")]
         [Key]
         public int MemberId { get; set; }
 
         [DisplayName("姓名")]
         [StringLength(100,ErrorMessage ="姓名超過100也太誇張")]
         [Required]
-        public String MemberName { get; set; }
+        public string MemberName { get; set; }
         [DisplayName("照片")]
         [MaxLength]
-        public byte[] MemberPhotoFile { get; set; }
+        public string MemberPhotoFile { get; set; }
         [DisplayName("會員生日")]
         [Required]
-        [DataType(DataType.DateTime)]
-        [DisplayFormat(DataFormatString = "{0:yy/MM/dd hh:mm;ss}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
+        //[DataType(DataType.DateTime)]
         public DateTime MemberBirthday { get; set; }
         [DisplayName("建立日期")]
-        [DataType(DataType.DateTime)]
-        [DisplayFormat(DataFormatString = "{0:yy/MM/dd hh:mm;ss}", ApplyFormatInEditMode = true)]
+        [Required]//        [DataType(DataType.DateTime)]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
         public DateTime CreateDate { get; set; }
         [DisplayName("帳號")]
         [Required]
         [StringLength(20, ErrorMessage = "帳號超過20個你記得住？")]
-        public String Account { get; set; }
-        string password;
+        [CheckAccount]
+        public string Account { get; set; }
+        //field
+        string password;//定義一個password的field
         [DisplayName("密碼")]
         [Required]
         [DataType(DataType.Password)]
         //[MinLength(8, ErrorMessage = "密碼最少8碼")]//雜湊就不用設定長度，會變
         //[MaxLength(20, ErrorMessage = "密碼最多20碼")]
-        public String Password {
-            get {
+        public string Password 
+        {
+            get 
+            {
                 return password;
             }
             set
@@ -58,6 +63,20 @@ namespace HW7Project.Models
                 password = result;
             }
         }
-
+        //自訂驗證規則的寫法
+        public class CheckAccount : ValidationAttribute 
+        {
+            public CheckAccount()
+            {
+                ErrorMessage = "這個帳號有人在用了～～";
+            }
+            public override bool IsValid(object value)
+            {
+                HW7ProjectContext db = new HW7ProjectContext();
+                var account= db.Members.Where(m => m.Account == value.ToString()).FirstOrDefault();
+                //return base.IsValid(value);
+                return (account==null)?true:false;
+            }
+        }
     }
 }

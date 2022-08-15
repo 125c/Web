@@ -1,12 +1,42 @@
 ﻿@model HW7Project.Models.Members
 
 @{
-    ViewBag.Title = "Details";
+//ViewBag.Title = "Details";
 }
 
 <h2>Details</h2>
+<div class="p-3">
 
-<div>
+    <div class="card border-info">
+        <div class="card-header bg-info text-white">
+            <h3>@Html.DisplayFor(model => model.MemberName)</h3>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-8">
+                    <h4>生日:@Html.DisplayFor(model => model.MemberBirthday)</h4>
+                    <h4>
+                        帳號:@Html.DisplayFor(model => model.Account)
+                    </h4>
+                    <h4> 密碼:(´_ゝ`)  ╮(╯_╰)╭</h4>
+                </div>
+                <div class="col-md-4">
+                    @{
+                        var photo = Model.MemberPhotoFile == null ? "capoo.png" : Model.MemberPhotoFile;
+                        
+                    }
+                    <img src="~/MemberPhotos/@photo" class="img-thumbnail" />
+                </div>
+            </div>
+        </div>
+        <div class="card-footer text-right bg-info text-white">
+            @Html.DisplayFor(model => model.CreateDate)
+        </div>
+    </div>
+
+
+</div>
+@*<div>
     <h4>Members</h4>
     <hr />
     <dl class="dl-horizontal">
@@ -59,7 +89,7 @@
         </dd>
 
     </dl>
-</div>
+</div>*@
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.MemberId }) |
     @Html.ActionLink("Back to List", "Index")
