@@ -22,7 +22,7 @@ namespace HW7Project.Models
         public string MemberPhotoFile { get; set; }
         [DisplayName("會員生日")]
         [Required]
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         //[DataType(DataType.DateTime)]
         public DateTime MemberBirthday { get; set; }
         [DisplayName("建立日期")]
@@ -71,6 +71,8 @@ namespace HW7Project.Models
             }
             public override bool IsValid(object value)
             {
+                if (value == null)
+                    value = "@#$";
                 HW7ProjectContext db = new HW7ProjectContext();
                 var account= db.Members.Where(m => m.Account == value.ToString()).FirstOrDefault();
                 //return base.IsValid(value);

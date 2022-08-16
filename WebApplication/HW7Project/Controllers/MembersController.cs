@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using HW7Project.Models;
 using PagedList;
+using System.Configuration;
 
 namespace HW7Project.Controllers
 {
@@ -62,14 +64,17 @@ namespace HW7Project.Controllers
             {
                 if (photo.ContentLength>0)  
                 {
-                    photo.SaveAs(Server.MapPath("~/MemberPhotos/" + members.Account + ".jpg"));
-                    members.MemberPhotoFile = members.Account + ".jpg";
+                    string extensionName=System.IO.Path.GetExtension(photo.FileName);
+                    if (extensionName==".jpg"|| extensionName == ".png" ) 
+                    {
+                        photo.SaveAs(Server.MapPath("~/MemberPhotos/" + members.Account + ".jpg"));
+                        members.MemberPhotoFile = members.Account + ".jpg";
+                    }
                 }
             }
            
             if (ModelState.IsValid)
             {
-
                 db.Members.Add(members);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -100,19 +105,40 @@ namespace HW7Project.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Members members)
         {
-            var member = db.Members.Find(members.MemberId);
-            member.MemberName = members.MemberName;
-            member.MemberBirthday= members.MemberBirthday;
-            member.MemberId=members.MemberId;
-            member.CreateDate=members.CreateDate;
-            member.Account=members.Account;
-            member.Password = members.Password;
-            if (ModelState.IsValid)
+            //var member = db.Members.Find(members.MemberId);
+            //member.MemberName = members.MemberName;
+            //member.MemberBirthday= members.MemberBirthday;
+            //member.MemberId=members.MemberId;
+            //member.CreateDate=members.CreateDate;
+            //member.Account=members.Account;
+            //member.Password = members.Password;
+            //if (ModelState.IsValid)
+            //{
+            //    db.Entry(members).State = EntityState.Modified;
+            //    db.SaveChanges();
+            //    return RedirectToAction("Index");
+            //}
+            string sql = "update members set MemberName=@MemberName,MemberBirthday=@MemberBirthday where MemberId=@MemberId";
+            
+
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["HW7ProjectConnection"].ConnectionString);
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@MemberName", members.MemberName);
+            cmd.Parameters.AddWithValue("@MemberBirthday", members.MemberBirthday);
+            cmd.Parameters.AddWithValue("@MemberId", members.MemberId);
+            conn.Open();
+            try
             {
-                db.Entry(member).State = EntityState.Modified;
-                db.SaveChanges();
+                cmd.ExecuteNonQuery();
                 return RedirectToAction("Index");
             }
+            catch(Exception ex)
+            {
+                ViewBag.Error = ex.Message;
+            }
+            cmd.ExecuteNonQuery();
+
+            conn.Close();
             return View(members);
         }
 
