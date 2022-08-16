@@ -12,7 +12,7 @@
     @Html.AntiForgeryToken()
     
 <div class="form-horizontal">
-    <h4>Members</h4>
+    <h4>乾爹ㄉ資料~♥(´∀` )人</h4>
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @Html.HiddenFor(model => model.MemberId)
@@ -32,17 +32,17 @@
             @Html.ValidationMessageFor(model => model.MemberBirthday, "", new { @class = "text-danger" })
         </div>
     </div>
-    <div class="form-group">
+    @*<div class="form-group">
        要修改的 @Html.LabelFor(model => model.MemberBirthday, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @*@Html.TextBox("MemberBirthday", MemberBirthday, new { Type = "date" })*@
+            
             @Html.TextBoxFor(model => model.MemberBirthday, new { type = "date" })
         </div>
-    </div>
+    </div>*@
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Save" class="btn btn-default" />
+            <input type="submit" value="按這裡或Entert都可儲存" class="btn btn-default" />
             <span class="text-danger">@ViewBag.Error</span>
         </div>
     </div>
@@ -50,5 +50,5 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("回到乾爹列表", "Index")
 </div>

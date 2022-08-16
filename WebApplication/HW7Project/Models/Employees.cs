@@ -21,18 +21,19 @@ namespace HW7Project.Models
         /// 
         [DisplayName("建立日期")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString ="{0:yy/MM/dd hh:mm;ss}",ApplyFormatInEditMode =true)]
+        [DisplayFormat(DataFormatString ="{0:yyyy/MM/dd hh:mm;ss}",ApplyFormatInEditMode =true)]
         ///
         public DateTime CreatedDate { get; set; }
-        [Required(ErrorMessage = "帳號一定要有")]
         [DisplayName("帳號")]
+        [Required(ErrorMessage = "請填寫帳號")]
+        [StringLength(20, ErrorMessage = "帳號不得超過20字")]
         [RegularExpression("[A-Za-z][A-Za-z0-9]{4,19}",ErrorMessage =("帳號格式錯誤，要英文大小寫開頭"))]
-        public String Account { get; set; }
+        public string Account { get; set; }
         string password;
         [Required(ErrorMessage = "密碼一定要有")]
         [DisplayName("密碼")]
         [DataType(DataType.Password)]
-        public String Password
+        public string Password
         { get; set; }
         //{
         //    get

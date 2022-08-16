@@ -9,6 +9,7 @@ using System.Web.SessionState;
 using System.Web.Http;
 using HW7Project.Models;
 using System.Data.Entity;
+using HW7Project.App_Start;
 
 
 namespace HW7Project
@@ -17,11 +18,12 @@ namespace HW7Project
     {
         void Application_Start(object sender, EventArgs e)
         {
-            //Database.SetInitializer<HW7ProjectContext>(new DBinitializer());
+            Database.SetInitializer<HW7ProjectContext>(new DBinitializer());
             // 應用程式啟動時執行的程式碼
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);            
+            RouteConfig.RegisterRoutes(RouteTable.Routes);   
+            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
         }
     }
 }

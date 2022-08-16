@@ -13,7 +13,6 @@ using System.Configuration;
 
 namespace HW7Project.Controllers
 {
-    [LoginCheck]
     public class MembersController : Controller
     {
         private HW7ProjectContext db = new HW7ProjectContext();

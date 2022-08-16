@@ -84,14 +84,14 @@ namespace HW7Project.Models
                    EmployeesName="王立弘",
                    CreatedDate=DateTime.Today,
                    Account="admin",
-                   Password="P@ssw0rd"
+                   Password="12345678"
                 },
                 new Employees
                 {
                    EmployeesName="林天天",
                    CreatedDate=DateTime.Today,
                    Account="Linsky",
-                   Password="123456"
+                   Password="12345678"
                 }
             };
 
