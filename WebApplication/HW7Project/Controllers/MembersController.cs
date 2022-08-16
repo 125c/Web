@@ -63,12 +63,13 @@ namespace HW7Project.Controllers
                 if (photo.ContentLength>0)  
                 {
                     photo.SaveAs(Server.MapPath("~/MemberPhotos/" + members.Account + ".jpg"));
+                    members.MemberPhotoFile = members.Account + ".jpg";
                 }
             }
            
             if (ModelState.IsValid)
             {
-                members.MemberPhotoFile = members.Account + ".jpg";
+
                 db.Members.Add(members);
                 db.SaveChanges();
                 return RedirectToAction("Index");

@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Web;
 using System.Security.Cryptography;
 
 namespace HW7Project.Models
 {
     public class Members
-    {
+    {   [Key]
         [DisplayName("會員編號")]
-        [Key]
         public int MemberId { get; set; }
 
         [DisplayName("姓名")]

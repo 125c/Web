@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Create";
-    var CreatedDate = DateTime.Today.ToShortDateString();
+    var CreateDate = DateTime.Today.ToShortDateString();
 }
 
 <h2>建立會員資料</h2>
@@ -40,7 +40,7 @@
             @Html.ValidationMessageFor(model => model.MemberBirthday, "", new { @class = "text-danger" })
         </div>
     </div>
-    <input id="CreatedDate" type="hidden" name="CreatedDate" value="@CreatedDate" readonly />
+    <input id="CreateDate" type="hidden" name="CreateDate" value="@CreateDate" readonly />
     @*<div class="form-group">
             @Html.LabelFor(model => model.MemberBirdthday, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
