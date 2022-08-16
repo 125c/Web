@@ -13,6 +13,7 @@ using System.Configuration;
 
 namespace HW7Project.Controllers
 {
+    [LoginCheck]
     public class MembersController : Controller
     {
         private HW7ProjectContext db = new HW7ProjectContext();
@@ -21,7 +22,7 @@ namespace HW7Project.Controllers
         public ActionResult Index(int page=1)
         {
             var members = db.Members.ToList();
-            int pagesize = 5;
+            int pagesize = 15;
             var PagedList = members.ToPagedList(page, pagesize);
             //return View(db.Members.ToList());
             return View(PagedList);
