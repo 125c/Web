@@ -1,0 +1,42 @@
+﻿@model HW7Project.Models.Products
+
+@{
+    ViewBag.Title = "Details";
+    //Layout = "~/Views/Shared/_Layout_Manager.cshtml";
+    Layout = "";
+    string flag = Model.Discontinued ? "否" : "是";
+}
+
+
+
+<div class="card border-info">
+
+    <div class="card-header bg-info text-white">
+        <h3>@Html.DisplayFor(model => model.ProductName)</h3>
+    </div>
+
+    <div class="card-body row">
+        <div class="col-4">
+            <img src="@Url.Action("GetImage", new {id=Model.ProductID})" class="img-thumbnail" />
+        </div>
+        <div class="col-8">
+
+            <p>
+                @*@Html.DisplayFor(model => model.Description)*@
+                @Html.Raw(@Model.Description.ToString().Replace("\n", "<br />"))
+            </p>
+            <h1 class="text-danger">
+                @Html.DisplayFor(model => model.UnitPrice)
+            </h1>
+            <p class="bg-light rounded shadow-sm text-center">
+                在架上：@flag |
+                庫存：@Html.DisplayFor(model => model.UnitsInStock) |
+                建立日：@Html.DisplayFor(model => model.CreatedDate)
+            </p>
+        </div>
+    </div>
+    <div class="card-footer text-right">
+        @Html.ActionLink("修改", "Edit", new { id = Model.ProductID }, new { @class = "btn btn-info" })
+    </div>
+
+</div>

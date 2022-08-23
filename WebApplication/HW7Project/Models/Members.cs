@@ -28,7 +28,7 @@ namespace HW7Project.Models
         [DisplayName("建立日期")]
         [Required]//        [DataType(DataType.DateTime)]
         [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
-        public DateTime CreateDate { get; set; }
+        public DateTime CreatedDate { get; set; }
         [DisplayName("帳號")]
         [Required]
         [StringLength(20, ErrorMessage = "帳號超過20個你記得住？")]

@@ -16,13 +16,14 @@ namespace HW7Project.Controllers
     public class LogReporter:ActionFilterAttribute
     {
         HttpContext context;
+        public bool recordFlag;
         void LogValues(RouteData routeData, HttpContext context) 
         {
             var logTime = DateTime.Now;
             var controllerName = routeData.Values["controller"];
             var actionName = routeData.Values["action"];
             var parameter = routeData.Values["id"] ==null?"N/A":routeData.Values["id"];
-            var user = context.Session["user"] ==null?"Guest":((Employees)context.Session["user"]).EmployeesId.ToString();
+            var user = context.Session["user"] ==null?"Guest":((Employees)context.Session["user"]).EmployeesID.ToString();
             StreamWriter sw = new StreamWriter(context.Server.MapPath("\\ValueLog.csv"), true, Encoding.Default);
             sw.WriteLine(logTime+","+ controllerName +","+ actionName + ","+parameter+","+user);
             sw.Close();
@@ -52,11 +53,16 @@ namespace HW7Project.Controllers
             context=HttpContext.Current;
             LogValues(filterContext.RouteData, context);
         }
+        
         public override void OnResultExecuted(ResultExecutedContext filterContext)
         {
-            //base.OnActionExecuted(actionExecutedContext);
-            context = HttpContext.Current;
-            RequestLog(context);
+            if (recordFlag) 
+            {
+                //base.OnActionExecuted(actionExecutedContext);
+                context = HttpContext.Current;
+                RequestLog(context);
+            }
+            
         }
     }
 }

@@ -17,7 +17,7 @@ namespace HW7Project.Models
         [Key]
         [DisplayName("商品編號")]
         [Column(Order = 2)]
-        public int ProductId { get; set; }
+        public int ProductID { get; set; }
         [DisplayName("商品數量")]
         [Required(ErrorMessage ="請輸入商品數量")]
         [Range(0,short.MaxValue,ErrorMessage =("商品數量不可小於0"))]

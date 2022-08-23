@@ -12,7 +12,7 @@ namespace HW7Project.Models
     {
         [Key]
         [Required(ErrorMessage = "員工編號")]
-        public int EmployeesId { get; set; }
+        public int EmployeesID { get; set; }
         /// 
         [Required(ErrorMessage = "員工姓名")]
         [StringLength(100, ErrorMessage = "員工姓名不得超過100字")]

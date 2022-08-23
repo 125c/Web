@@ -18,7 +18,7 @@ namespace HW7Project
     {
         void Application_Start(object sender, EventArgs e)
         {
-            Database.SetInitializer<HW7ProjectContext>(new DBinitializer());
+            //Database.SetInitializer<HW7ProjectContext>(new DBInitializer());
             // 應用程式啟動時執行的程式碼
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);

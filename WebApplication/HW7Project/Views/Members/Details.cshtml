@@ -2,10 +2,10 @@
 
 @{
     //ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/_Layout_Manager.cshtml";
+    //Layout = "~/Views/Shared/_Layout_Manager.cshtml";
 }
 
-<h2>Details</h2>
+<h2>詳細資料</h2>
 <div class="p-3">
 
     <div class="card border-info">
@@ -31,67 +31,10 @@
             </div>
         </div>
         <div class="card-footer text-right bg-info text-white">
-            @Html.DisplayFor(model => model.CreateDate)
+            @Html.DisplayFor(model => model.CreatedDate)
         </div>
     </div>
 
 
 </div>
-@*<div>
-    <h4>Members</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.MemberName)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.MemberName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MemberPhotoFile)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MemberPhotoFile)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MemberBirthday)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MemberBirthday)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CreateDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CreateDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Account)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Account)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Password)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Password)
-        </dd>
-
-    </dl>
-</div>*@
-@*<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.MemberId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>*@

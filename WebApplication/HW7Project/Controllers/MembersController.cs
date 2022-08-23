@@ -53,7 +53,7 @@ namespace HW7Project.Controllers
         // 如需詳細資料，請參閱 https://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MemberId,MemberName,MemberPhotoFile,MemberBirthday,CreateDate,Account,Password")] Members members,HttpPostedFileBase photo)
+        public ActionResult Create([Bind(Include = "MemberId,MemberName,MemberPhotoFile,MemberBirthday,CreatedDate,Account,Password")] Members members,HttpPostedFileBase photo)
         {
             //var account=db.Members.Where(m => m.Account == members.Account).FirstOrDefault();
             //if (account!=null) {
@@ -109,7 +109,7 @@ namespace HW7Project.Controllers
             //member.MemberName = members.MemberName;
             //member.MemberBirthday= members.MemberBirthday;
             //member.MemberId=members.MemberId;
-            //member.CreateDate=members.CreateDate;
+            //member.CreatedDate=members.CreatedDate;
             //member.Account=members.Account;
             //member.Password = members.Password;
             //if (ModelState.IsValid)
