@@ -1,14 +1,19 @@
 ﻿@model IEnumerable<HW7Project.Models.Products>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "商品管理";
     Layout = "~/Views/Shared/_Layout_Manager.cshtml";
+    string a = "";
 }
 
 <h2>商品管理</h2>
 
 <p>
-    @Html.ActionLink("新增商品", "Create")
+    @*@Html.ActionLink("新增商品", "Create")*@
+
+    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal" id="btnCreate">
+        新增商品
+    </button>
 </p>
 <table class="table">
     <tr>
@@ -62,37 +67,46 @@
                 </td>*@
             <td>
                 @item.UnitsInStock
+
                 @*@Html.DisplayFor(modelItem => item.UnitsInStock)*@
             </td>
             <td>
                 @if (item.Discontinued)
                 {
                     <i class="bi bi-bag-x text-danger"></i>
+                    a = "上";
                 }
                 else
                 {
                     <i class="bi bi-bag-check text-success"></i>
+                    a = "下";
                 }
+
                 @*@Html.DisplayFor(modelItem => item.Discontinued)*@
             </td>
             @*<td>
                     @Html.DisplayFor(modelItem => item.CreatedDate)
                 </td>*@
-            <td>
-                @*@Html.ActionLink("Edit", "Edit", new { id=item.ProductID }) |*@
-                @*@Html.ActionLink("管理", "Details", new { id = item.ProductID })*@
-                <button type="button" class="btn btn-info myBtn" data-toggle="modal" data-target="#exampleModal" id="@item.ProductID">管理</button>
-                @*@Html.ActionLink("Delete", "Delete", new { id=item.ProductID })*@
-            </td>
+            
+        <td>
+            @Html.ActionLink("商品" + a + "架", "ProductStatusChange", new { id = item.ProductID })
+            <button type="button" class="btn btn-info myBtn" id="@item.ProductID" data-toggle="modal" data-target="#exampleModal">
+                管理
+            </button>
+
+
+        </td>
         </tr>
     }
 
 </table>
 
+
+
 <!-- Button trigger modal -->
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
                 <h3 class="modal-title" id="exampleModalLabel">詳細資料</h3>
@@ -103,19 +117,32 @@
             <div class="modal-body">
                 ...
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
+            @*<div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>*@
         </div>
     </div>
 </div>
-<script src="~/Scripts/jquery-3.4.1.min.js"></script>
-<script>
-    $('.myBtn').click(function (evt)
-    {
-        console.log(evt.target.id);
-        $('#exampleModal .modal-body').load("Details/" + evt.target.id);
-    });
-    ;
-</script>
+@section scripts{
+    @*<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>*@
+    <script>
+
+        $('.myBtn').click(function (evt) {
+            console.log(evt.target.id);
+            $('#exampleModalLabel').text("詳細資料");
+            $('#exampleModal .modal-body').load("/Products/Details/" + evt.target.id);
+        });
+
+        $('#btnCreate').click(function () {
+            //console.log(evt.target.id);
+            $('#exampleModalLabel').text("新增商品資料");
+            $('#exampleModal .modal-body').load("/Products/Create");
+
+        });
+
+
+    </script>
+    }

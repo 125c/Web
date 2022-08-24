@@ -18,14 +18,14 @@ namespace HW7Project.Models
         [DisplayName("商品名稱")]
         [Required(ErrorMessage = "請輸入商品名稱")]
         [StringLength(150, ErrorMessage = "商品名稱最多40個字")]
-        public String ProductName { get; set; }
+        public string ProductName { get; set; }
         [DisplayName("商品照片")]
         [Required(ErrorMessage = "請上傳商品照片")]
         [MaxLength]
         public byte[] PhotoFile { get; set; }
         [HiddenInput(DisplayValue = false)]//要抓值但是不顯示
         [StringLength(20)]
-        public String ImageMimeType { get; set; }//不是抓副檔名
+        public string ImageMimeType { get; set; }//不是抓副檔名
         [DisplayName("商品單價")]
         [Required(ErrorMessage = "請輸入商品單價")]
         [Range(0, short.MaxValue, ErrorMessage = "單價不可小於0")]
@@ -33,7 +33,7 @@ namespace HW7Project.Models
         [DisplayName("商品說明")]
         [Required(ErrorMessage = "請輸入商品說明")]
         [StringLength(1000, ErrorMessage = "商品介紹不得超過1000字")]
-        public String Description { get; set; }
+        public string Description { get; set; }
         [DisplayName("庫存量")]
         [Required(ErrorMessage = "請輸入庫存量")]
         [Range(0, short.MaxValue, ErrorMessage = "庫存量不可小於0")]

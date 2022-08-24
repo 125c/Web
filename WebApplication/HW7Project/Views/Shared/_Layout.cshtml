@@ -6,7 +6,7 @@
     <title>@ViewBag.Title - 鍋具商城</title>
 
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+    @*<script src="~/Scripts/modernizr-2.8.3.js"></script>*@
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 </head>
@@ -20,6 +20,7 @@
             <div class="collapse navbar-collapse" id="MynavbarMenu">
                 <div class="navbar-nav">
                     @Html.ActionLink("首頁", "Index", "Home", new { area = "" }, new { @class = "nav-link" })
+                    @Html.ActionLink("商品查詢", "Index", "Products", new { area = "" }, new { @class = "nav-link" })
                     @Html.ActionLink("登入", "Login", "HomeManager", new { area = "" }, new { @class = "nav-link" })
                 </div>
             </div>
