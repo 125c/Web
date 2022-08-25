@@ -65,7 +65,7 @@ namespace HW7Project.Controllers
                 ViewBag.ErrMessage2 = "商品編號重複";
                 return View(products);
             }
-            products.ImageMimeType = photo.ContentType;
+            products.ImageMimeType = photo.ContentType;//如果需要儲存.jpg或png才要這行
             products.PhotoFile = new byte[photo.ContentLength];
             photo.InputStream.Read(products.PhotoFile,0,photo.ContentLength);
             products.CreatedDate = DateTime.Today; 

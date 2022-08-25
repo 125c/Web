@@ -1,0 +1,79 @@
+﻿@model IEnumerable<HW7Project.Models.Products>
+
+@{
+    ViewBag.Title = "ProductList";
+}
+
+@*<h2>ProductList</h2>*@
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="card col-3">
+            <img src="@Url.Action("GetImage","Products", new {id=item.ProductID})" class="img-thumbnail" />
+            <div class="card-body">
+                <input class="PID" type="hidden" value="@item.ProductID"/>
+                <h5><strong class="PName">@Html.DisplayFor(modelItem => item.ProductName)</strong></h5>
+                <h6 class="text-secondary text-right" style="text-decoration:line-through">原價:@(item.UnitPrice*5)</h6>
+                <h4 class="text-danger text-center"><strong>特價 <span class="Price" title="@item.UnitPrice">@Html.DisplayFor(modelItem => item.UnitPrice) </span></strong></h4>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-info btn-lg btn-block addCart"><i class="bi bi-cart4"></i> 加入購物車</button>
+
+            </div>
+        </div>
+    }
+
+</div>
+@section scripts
+    {
+    <script>
+        var cart = [];
+        if (localStorage.getItem("cart"))
+        {
+            cart = JSON.parse(localStorage.getItem("cart"));
+        }
+        $('.addCart').click(function ()
+        {
+            let product = $(this).closest('.card');
+            let newPID = product.find(".PID").val();
+            //let pName = product.find(".PName").text();
+            //let price = product.find(".Price").attr("title");
+            //let amount = 1;
+            if (cart.length > 0) {
+                for (let index in cart) {
+                    if (newPID == cart[index]["PID"]) {
+                        cart[index]["Amount"] += 1;
+                        localStorage.setItem("cart", JSON.stringify(cart));
+                        alert('商品數量已更新');
+                        break;
+                    }
+                    else if (cart.length - 1 == index) {
+                        setCart(product);
+                    }
+                }
+            }
+            else
+            {
+                setCart(product);
+            }
+        });
+        function setCart(product)
+        {
+            let newItem =
+            {
+                PID: product.find(".PID").val(),
+                PName: product.find(".PName").text(),
+                Price: product.find(".Price").attr("title"),
+                Amount: 1
+            }
+            cart.push(newItem);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert('已加入購物車');
+        }
+    </script>
+    }
+
