@@ -20,5 +20,9 @@ namespace HW7Project.Controllers
             var products=db.Products.Where(p=>p.Discontinued==false).ToList();
             return View(products);
         }
+        public ActionResult MyCart()
+        {
+            return View();
+        }
     }
 }

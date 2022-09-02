@@ -18,11 +18,14 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="MynavbarMenu">
-                <div class="navbar-nav">
-                    @Html.ActionLink("首頁", "Index", "Home", new { area = "" }, new { @class = "nav-link" })
-                    @Html.ActionLink("商品查詢", "ProductList", "Home", new { area = "" }, new { @class = "nav-link" })
-                    @Html.ActionLink("登入", "Login", "HomeManager", new { area = "" }, new { @class = "nav-link" })
-                </div>
+                <ul class="navbar-nav">
+                    <li class="navbar-nav">@Html.ActionLink("首頁", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li class="navbar-nav">@Html.ActionLink("商品查詢", "ProductList", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li class="navbar-nav">@Html.ActionLink("購物車", "MyCart", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                </ul>
+            </div>
+            <div>
+                @Html.ActionLink("登入", "Login", "HomeManager", new { area = "" }, new { @class = "nav-link" })
             </div>
         </div>
     </div>

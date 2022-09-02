@@ -1,0 +1,101 @@
+﻿
+@{
+    ViewBag.Title = "我的購物車～";
+}
+
+<h2 class="rounded shadow text-center border-info p-4 text-info mb-4">我的購物車</h2>
+<div id="MyCart">
+
+</div>
+<h3 class="text-right" id="total"></h3>
+<hr />
+<div class="text-right">
+    <button class="btn btn-success" id="updateCart"><i class="bi bi-cart-check"></i> 更新購物車</button>
+    <button class="btn btn-danger" id="clear"><i class="bi bi-cart-x"></i> 清空購物車</button>
+    <button class="btn btn-primary"><i class="bi bi-cash-coin"></i> 結帳</button>
+</div>
+@section scripts{
+    <script>
+        var cart = [];
+        initCart();
+
+        function initCart() {
+            if (localStorage.getItem("cart")) {
+                cart = JSON.parse(localStorage.getItem("cart"));
+
+
+                let cartList = "";
+                let pPrice = 0;
+                let total = 0;
+                for (let i = 0; i < cart.length; i++) {
+
+                    console.log(cart[i]["PName"]);
+                    pPrice = Number(cart[i]["Price"]) * Number(cart[i]["Amount"]);
+                    total += pPrice;
+
+                    cartList += `
+                        <div class="media border-bottom border-danger mb-3 p-4">
+                            <img src="/Products/GetImage/${cart[i]["PID"]}" class="mr-3" width="150" alt="...">
+                            <div class="media-body">
+                                <h5 class="mt-0">${cart[i]["PName"]}</h5>
+                                <p>
+                                    <h5 class="text-right">單價：${cart[i]["Price"]}
+                                    數量：<input min="1" id="${cart[i]["PID"]}" type="number" value="${cart[i]["Amount"]}" style="width:60px" /></h5>
+                                    <h4 class="text-right">小計：<span class="text-danger">${pPrice}<span></h4>
+                                </p>
+                                <div class="d-flex justify-content-end">
+                                    <button class="btn btn-outline-danger btnDelItem"  id="${i}"><i class="bi bi-trash3"></i> 刪除此商品</button>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                }
+
+                $('#total').html(`總計：<span class="text-danger">${total}</span>`);
+                $('#MyCart').html(cartList);
+
+            }
+            else {
+                $('#MyCart').html("<h3 class='text-center text-danger'>目前購物車內沒有任何商品</h3>");
+            }
+        }
+        //清空購物車
+        $('#clear').click(() => {
+            if (confirm('是否確定清空購物車？')) {
+                cart = [];
+                localStorage.removeItem("cart");
+                $('#MyCart').text("");
+                $('#total').text("");
+                initCart();
+            }
+
+        });
+        //更新購物車 updateCart
+        $('#updateCart').click(() => {
+            for (i = 0; i < cart.length; i++) {
+                cart[i]["Amount"] = $('#' + cart[i]["PID"]).val();
+            }
+            localStorage.setItem("cart", JSON.stringify(cart));
+            initCart();
+        }
+        );
+        //btnDelItem
+        $('#MyCart').click(function (evt) {
+            if (evt.target.title == "btnDelItem") {
+                console.log(evt.target.id);
+                if (confirm('確定移除此商品')) {
+                    cart.splice(evt.target.id, 1);
+                    localStorage.setItem("cart", JSON.stringify(cart));
+
+                    if (localStorage.getItem("cart") == "[]") {
+                        $('#MyCart').text("");
+                        $('#total').text("");
+                        localStorage.removeItem("cart");
+                    }
+
+                    initCart();
+                }
+            }
+        });
+    </script>
+}
