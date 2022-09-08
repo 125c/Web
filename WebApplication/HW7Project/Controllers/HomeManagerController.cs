@@ -11,7 +11,7 @@ namespace HW7Project.Controllers
     {
         HW7ProjectContext db=new HW7ProjectContext();
         // GET: Homemanager
-        [LoginCheck]
+        //[LoginCheck]//管要不要登入的東西，不要再刪掉了！
         public ActionResult Index()
         {
             return View();
@@ -32,7 +32,7 @@ namespace HW7Project.Controllers
             Session["user"] = user;
             return RedirectToAction("Index");            
         }
-        [LoginCheck]
+        //[LoginCheck]//管要不要登入的東西，不要再刪掉了！
         public ActionResult Logout() 
         {
             Session["user"] = null;

@@ -1,6 +1,9 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿footer {
+    margin-bottom: 0;
+}
+body {
+   /* padding-top: 50px;
+    padding-bottom: 20px;*/
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -16,3 +19,29 @@ textarea {
     max-width: 280px;
 }
 
+caption {
+    color: #344aca;
+    text-align: center;
+    caption-side: top;
+    font-size: 1.3rem;
+}
+.table-hover tbody tr:hover {
+    color: #ff0000;
+    font-size: 1.3rem;
+    background-color: #b6ff00;
+}
+.MyTable {
+    overflow: auto;
+}
+.breadcrumb-item + .breadcrumb-item::before {
+    color: #ff0000;
+    content: ">";
+}
+.text-shadow {
+    text-shadow: 2px 2px 3px black;
+}
+
+.modal-content {
+    background-image: url('../photo/03.jpg');
+    background-repeat: round;
+}

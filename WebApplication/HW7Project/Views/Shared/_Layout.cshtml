@@ -19,13 +19,21 @@
             </button>
             <div class="collapse navbar-collapse" id="MynavbarMenu">
                 <ul class="navbar-nav">
-                    <li class="navbar-nav">@Html.ActionLink("首頁", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li class="navbar-nav">@Html.ActionLink("商品查詢", "ProductList", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li class="navbar-nav">@Html.ActionLink("購物車", "MyCart", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("首頁", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("商品查詢", "ProductList", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("購物車", "MyCart", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                 </ul>
             </div>
             <div>
-                @Html.ActionLink("登入", "Login", "HomeManager", new { area = "" }, new { @class = "nav-link" })
+                @if (Session["member"] == null)
+                {
+                    @Html.ActionLink("登入", "Login", "Home", new { area = "" }, new { @class = "nav-link" })
+                }
+                else
+                {
+                    @Html.ActionLink("登出", "Logout", "Home", new { area = "" }, new { @class = "nav-link" })
+                }
+
             </div>
         </div>
     </div>

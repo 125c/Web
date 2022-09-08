@@ -49,18 +49,22 @@ namespace HW7Project.Models
             }
             set
             {
-                byte[] hashValue;
-                string result = "";
-                System.Text.UnicodeEncoding ue= new System.Text.UnicodeEncoding();
-                byte[] pwBytes = ue.GetBytes(value);
-                SHA256 shHash=SHA256.Create();
-                hashValue=shHash.ComputeHash(pwBytes);
-                foreach (byte b in hashValue)
-                {
-                    result += b.ToString();
-                }
-                password = result;
+                password = getHashPassword(value);
             }
+        }
+        public static string getHashPassword(string pw) 
+        {
+            byte[] hashValue;
+            string result = "";
+            System.Text.UnicodeEncoding ue = new System.Text.UnicodeEncoding();
+            byte[] pwBytes = ue.GetBytes(pw);
+            SHA256 shHash = SHA256.Create();
+            hashValue = shHash.ComputeHash(pwBytes);
+            foreach (byte b in hashValue)
+            {
+                result += b.ToString();
+            }
+            return result;
         }
         //自訂驗證規則的寫法
         public class CheckAccount : ValidationAttribute 

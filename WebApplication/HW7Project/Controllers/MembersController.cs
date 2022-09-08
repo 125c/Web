@@ -13,6 +13,7 @@ using System.Configuration;
 
 namespace HW7Project.Controllers
 {
+    //[LoginCheck] //這是要不要開啟登入功能的！
     public class MembersController : Controller
     {
         private HW7ProjectContext db = new HW7ProjectContext();
@@ -67,8 +68,8 @@ namespace HW7Project.Controllers
                     string extensionName=System.IO.Path.GetExtension(photo.FileName);
                     if (extensionName==".jpg"|| extensionName == ".png" ) 
                     {
-                        photo.SaveAs(Server.MapPath("~/MemberPhotos/" + members.Account + ".jpg"));
-                        members.MemberPhotoFile = members.Account + ".jpg";
+                        photo.SaveAs(Server.MapPath("~/MemberPhotos/" + members.Account + extensionName));
+                        members.MemberPhotoFile = members.Account + extensionName;
                     }
                 }
             }
@@ -84,6 +85,16 @@ namespace HW7Project.Controllers
         }
 
         // GET: Members/Edit/5
+        [Route(@"M/{name}")]//可以依各會員名子登入編輯頁面
+        public ActionResult EditByName(string name)
+        {
+            Members members = db.Members.Where(m=>m.MemberName==name).FirstOrDefault();
+            if (members == null)
+            {
+                return HttpNotFound();
+            }
+            return View(members);
+        }
         public ActionResult Edit(int? id)
         {
             if (id == null)

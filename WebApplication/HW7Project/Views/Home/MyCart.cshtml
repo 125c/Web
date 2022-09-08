@@ -1,6 +1,11 @@
 ﻿
 @{
     ViewBag.Title = "我的購物車～";
+    var OrderOK = 0;
+    if (@TempData["cartFlag"] != null)
+    {
+        OrderOK = 1;
+    }
 }
 
 <h2 class="rounded shadow text-center border-info p-4 text-info mb-4">我的購物車</h2>
@@ -12,27 +17,35 @@
 <div class="text-right">
     <button class="btn btn-success" id="updateCart"><i class="bi bi-cart-check"></i> 更新購物車</button>
     <button class="btn btn-danger" id="clear"><i class="bi bi-cart-x"></i> 清空購物車</button>
-    <button class="btn btn-primary"><i class="bi bi-cash-coin"></i> 結帳</button>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseOrder">
+    <i class="bi bi-cash-coin"></i> 結帳</button>
+</div>
+<div class="collapse rounded bg-light mt-5 p-4" id="collapseOrder">
+    <h2 class="text-center">訂單資料填寫</h2>
+    @Html.Action("_Order","MemberOrder")
+</div>
+<div>
+    @Html.ActionLink("返回商品頁面","ProductList")
 </div>
 @section scripts{
     <script>
+        if (localStorage.getItem("cart")) {
+            $('#data').val(localStorage.getItem("cart"));
+        }
+        if (@OrderOK=== 1) {
+            alert("結帳完成!");
+            clearCart();
+        }
         var cart = [];
-        initCart();
-
-        function initCart() {
+        let initCart = function () {
             if (localStorage.getItem("cart")) {
                 cart = JSON.parse(localStorage.getItem("cart"));
-
-
                 let cartList = "";
                 let pPrice = 0;
                 let total = 0;
                 for (let i = 0; i < cart.length; i++) {
-
-                    console.log(cart[i]["PName"]);
                     pPrice = Number(cart[i]["Price"]) * Number(cart[i]["Amount"]);
                     total += pPrice;
-
                     cartList += `
                         <div class="media border-bottom border-danger mb-3 p-4">
                             <img src="/Products/GetImage/${cart[i]["PID"]}" class="mr-3" width="150" alt="...">
@@ -44,32 +57,35 @@
                                     <h4 class="text-right">小計：<span class="text-danger">${pPrice}<span></h4>
                                 </p>
                                 <div class="d-flex justify-content-end">
-                                    <button class="btn btn-outline-danger btnDelItem"  id="${i}"><i class="bi bi-trash3"></i> 刪除此商品</button>
+                                    <button class="btn btn-outline-danger"  id="${i}"title="btnDelItem"><i class="bi bi-trash3"></i> 刪除此商品</button>
                                 </div>
                             </div>
                         </div>
                     `
                 }
-
+                //console.log(cart[i]["PName"]);
+                //}
                 $('#total').html(`總計：<span class="text-danger">${total}</span>`);
                 $('#MyCart').html(cartList);
-
             }
             else {
                 $('#MyCart').html("<h3 class='text-center text-danger'>目前購物車內沒有任何商品</h3>");
             }
-        }
+        };
+        initCart();
         //清空購物車
         $('#clear').click(() => {
             if (confirm('是否確定清空購物車？')) {
-                cart = [];
-                localStorage.removeItem("cart");
-                $('#MyCart').text("");
-                $('#total').text("");
-                initCart();
+                clearCart();
             }
-
         });
+        function clearCart(); {
+            cart = [];
+            localStorage.removeItem("cart");
+            $('#MyCart').text("");
+            $('#total').text("");
+            initCart();
+        }
         //更新購物車 updateCart
         $('#updateCart').click(() => {
             for (i = 0; i < cart.length; i++) {
@@ -77,22 +93,19 @@
             }
             localStorage.setItem("cart", JSON.stringify(cart));
             initCart();
-        }
-        );
-        //btnDelItem
+        });
+        //移除單一品項btnDelItem
         $('#MyCart').click(function (evt) {
             if (evt.target.title == "btnDelItem") {
                 console.log(evt.target.id);
                 if (confirm('確定移除此商品')) {
                     cart.splice(evt.target.id, 1);
                     localStorage.setItem("cart", JSON.stringify(cart));
-
                     if (localStorage.getItem("cart") == "[]") {
                         $('#MyCart').text("");
                         $('#total').text("");
                         localStorage.removeItem("cart");
                     }
-
                     initCart();
                 }
             }

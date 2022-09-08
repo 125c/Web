@@ -1,0 +1,41 @@
+﻿@model IEnumerable<HW7Project.Models.Products>
+    @{
+        Layout = "";
+        string active = "";
+        string active2 = "";
+        int j = 0;
+     }
+<div id="carouselPhotos" class="carousel slide mt-4" data-ride="carousel">
+    <ol class="carousel-indicators">
+        @for (int i = 0; i < Model.Count(); i++)
+        {
+            active = i == 0 ? "active" : "";
+            <li data-target="#carouselPhotos" data-slide-to="0" class="@active"></li>
+        }
+    </ol>
+    <div class="carousel-inner">
+
+        @foreach (var item in Model)
+        {
+            active2 = j == 0 ? "active" : "";
+            <div class="carousel-item @active2" data-interval="5000">
+                <img src="@Url.Action("GetImage","Products", new {id=item.ProductID})" class="d-block w-100" />
+                <div class="carousel-caption d-none d-md-block">
+                    <h5 class="d-inline-block text-truncate bg-light text-dark alert alert-info" style="max-width:400px">@item.ProductName</h5>
+                    <p class="alert alert-danger">@item.UnitPrice</p>
+                </div>
+            </div>
+            j++;
+        }
+
+        <button class="carousel-control-next" type="button" data-target="#carouselPhotos" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="sr-only">Next</span>
+        </button>
+        <button class="carousel-control-prev" type="button" data-target="#carouselPhotos" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="sr-only">Previous</span>
+        </button>
+    </div>
+
+</div>
