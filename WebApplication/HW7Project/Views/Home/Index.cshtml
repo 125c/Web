@@ -1,22 +1,42 @@
 ﻿
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-    @c= 4;
+    int c = 4;
 }
 
-<h2>前台首頁</h2>
+@section css{
+    <style>
+    .jumbotron {
+        background-image: url('/Products/GetImage/@ViewBag.PID');
+        background-repeat:round;
+    }
+    </style>
 
+}
+
+<div class="jumbotron text-white">
+    <h1 class="display-4 text-shadow "><strong>鍋具商城</strong></h1>
+    <h3 class="text-shadow">買買鍋具 不再杯具</h3>
+    <hr>
+    <h5 class="bg-light text-dark p-2 rounded">這裡總有一款適合您的杯具</h5>
+    @Html.ActionLink("了解更多", "ProductList", null, new { @class = "btn btn-warning btn-lg" })
+
+</div>
 <div class="row">
-
-    <div class="col-md-12">
-        <h4>最新@(c)產品</h4>
-        @Html.Action("_ProductList",new {itemCount=c})
-    </div>
-    <div class="col-md-6">
-        <h4>最新留言</h4>
-    </div>
-    <div class="col-md-6">
-        <h4>最新消息</h4>
+    <div class="col-12">
+        <h4>最新@(c)個商品</h4>
+        @Html.Action("_ProductList", new { itemCount = c })
+        <div class="text-right">@Html.ActionLink("查看更多…", "ProductList")</div>
     </div>
 </div>
+<div class="row">
+    <div class="col-12">
+        @Html.Action("_ProductPhotoShow")
+    </div>
+
+</div>
+
+@section scripts{
+
+    <script src="~/Scripts/MyJS.js"></script>
+}

@@ -37,7 +37,7 @@
             clearCart();
         }
         var cart = [];
-        let initCart = function () {
+        function initCart() {
             if (localStorage.getItem("cart")) {
                 cart = JSON.parse(localStorage.getItem("cart"));
                 let cartList = "";
@@ -79,7 +79,7 @@
                 clearCart();
             }
         });
-        function clearCart(); {
+        function clearCart() {
             cart = [];
             localStorage.removeItem("cart");
             $('#MyCart').text("");

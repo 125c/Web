@@ -23,7 +23,7 @@ namespace HW7Project.Controllers
         public ActionResult Order(string ShipName, string ShipAddress,int ShipID,int PayTypeID,string data)
         {
             //如果沒登入,導去登入
-            if (Session["member"] == null) ;
+            if (Session["member"] == null) 
                 return RedirectToAction("Login", "Home");
             int memberID = ((Members)Session["member"]).MemberId;
             //如果已登入,就寫入資料庫

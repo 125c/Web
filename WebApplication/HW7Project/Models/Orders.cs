@@ -31,10 +31,10 @@ namespace HW7Project.Models
         public String ShipAddress { get; set; }
 
         //Forign Key
-        //public int ShipID { get; set; }
-        //public int PayTypeID { get; set; }
-        //public int EmployeeID { get; set; }
-        //public int MemberID { get; set; }
+        public int ShipID { get; set; }
+        public int PayTypeID { get; set; }
+        public int EmployeesID { get; set; }
+        public int MemberID { get; set; }
 
         //拉關聯
         public virtual Shippers Shipper { get; set; }

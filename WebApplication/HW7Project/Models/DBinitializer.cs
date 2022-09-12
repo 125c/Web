@@ -248,7 +248,6 @@ namespace HW7Project.Models
                    CreatedDate=DateTime.Today
                 }
             };
-
             products.ForEach(s => context.Products.Add(s));
             context.SaveChanges();
 
@@ -262,13 +261,8 @@ namespace HW7Project.Models
                 {
                     fileBytes = br.ReadBytes((int)fileOnDisk.Length);
                 }
-
-
                 return fileBytes;
             }
-
-
-
             List<Members> members = new List<Members>
             {
                 new Members
@@ -337,13 +331,8 @@ namespace HW7Project.Models
                    Password="P@ssw0rd"
                 }
             };
-
             employees.ForEach(s => context.Employees.Add(s));
             context.SaveChanges();
-
-            /////////////////////////////////////////////////////////////////////////////
-
-
         }
     }
 }
